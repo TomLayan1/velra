@@ -1,3 +1,8 @@
+// Banners
+import bannerOne from '../assets/velra/slider-1.jpeg'
+import bannerTwo from '../assets/velra/slider-2.jpeg'
+import bannerThree from '../assets/velra/slider-3.jpeg'
+
 export const navLinks = [
   {
     id: 1,
@@ -28,13 +33,22 @@ export const navLinks = [
 
 export const banners = [
   {
-    banner: "../assets/velra/slider-1.jpeg",
+    id: 1,
+    banner: bannerOne,
+    text: 'ELEVATE YOUR HOME WITH PREMIUM FURNITURE',
+    sub_text: "Discover timeless pieces designed to bring style, comfort, and sophistication to every room."
   },
   {
-    banner: "../assets/velra/slider-2.jpeg",
+    id: 2,
+    banner: bannerTwo,
+    text: "STYLISH LIVING, MADE COMFORTABLE",
+    sub_text: "Discover timeless pieces that blend elegance with everyday comfort — perfect for every room and every moment."
   },
   {
-    banner: "../assets/velra/slider-3.jpeg",
+    id: 3,
+    banner: bannerThree,
+    text: "BEAUTIFUL SPACES BEGIN WITH VELRA",
+    sub_text: "Discover timeless pieces that blend comfort, style, and craftsmanship — only at Velra."
   },
 ];
 
