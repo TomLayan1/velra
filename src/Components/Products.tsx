@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FaRegHeart } from "react-icons/fa";
-import { FaHeart } from "react-icons/fa";
 import { IoIosStar } from "react-icons/io";
 import { IoIosStarHalf } from "react-icons/io";
 import { products } from '../Data/Data';
