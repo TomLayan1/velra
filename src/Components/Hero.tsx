@@ -6,8 +6,8 @@ import { BannerType } from '../Interface/interface';
 
 
 const Hero:React.FC = () => {
-  const [searchBar, setSearchBar] = useState<boolean>(false)
-  const heroBanners: BannerType[] = banners
+  const [searchBar, setSearchBar] = useState<boolean>(false);
+  const heroBanners: BannerType[] = banners;
   const [index, setIndex] = useState<number>(0);
 
   useEffect(() => {

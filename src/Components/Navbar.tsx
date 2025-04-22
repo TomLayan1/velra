@@ -22,7 +22,7 @@ const Navbar: React.FC<NavPropsType> = ({ setSearchBar }) => {
   return (
     <>
       {showMenu && <div className='w-full h-[100vh] bg-[#d6d4d4c5] lg:hidden fixed top-0 left-0 z-10'></div>}
-      <div className='absolute w-full top-0 left-0 z-10 text-white lg:border-t-5 border-white'>
+      <div className='absolute w-full top-0 left-0 z-10 text-white'>
         <div className='container p-4 md:px-8 lg:py-0 mx-auto flex justify-between items-center'>
           <h1 className='text-4xl'>Velra</h1>
           <div className={`bg-white z- fixed lg:static top-0 right-0 w-[50%] lg:w-auto h-[100vh] lg:h-16 pt-20 lg:pt-0 duration-300 lg:translate-x-0 ease-in-out ${showMenu ? 'translate-x-0' : 'translate-x-full'} text-black flex lg:items-center px-7 lg:rounded-bl-3xl lg:rounded-br-3xl`}>

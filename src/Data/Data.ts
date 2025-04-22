@@ -3,6 +3,13 @@ import bannerOne from '../assets/velra/slider-1.jpeg'
 import bannerTwo from '../assets/velra/slider-2.jpeg'
 import bannerThree from '../assets/velra/slider-3.jpeg'
 
+// Features
+import livingRoom from "../assets/velra/living_room.jpg"
+import bedRoom from "../assets/velra/bed_room.jpg"
+import kidsRoom from "../assets/velra/kids_room.jpg"
+import kitchen from "../assets/velra/kitchen.jpg"
+
+
 export const navLinks = [
   {
     id: 1,
@@ -52,15 +59,15 @@ export const banners = [
   },
 ];
 
-export const category = [
+export const feature = [
   {
     id: 1,
-    img: "../assets/velra/living_room.jpg",
+    img: livingRoom,
     name: "Living Room",
   },
   {
     id: 2,
-    img: "../assets/velra/bed_room.jpg",
+    img: bedRoom,
     name: "Bed Room",
   },
   {
@@ -68,12 +75,12 @@ export const category = [
     imgs: [
       {
         id: 31,
-        img: "../assets/velra/kids_room.jpg",
+        img: kidsRoom,
         name: "Kids Room",
       },
       {
         id: 32,
-        img: "../assets/velra/kitchen.jpg",
+        img: kitchen,
         name: "Kitchen",
       },
     ],
