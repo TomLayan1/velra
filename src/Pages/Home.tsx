@@ -1,14 +1,16 @@
 import React from 'react'
 import Hero from '../Components/Hero'
 import About from '../Components/About'
-import Features from '../Components/Features'
+import Categories from '../Components/Categories'
+import Products from '../Components/Products'
 
 const Home:React.FC = () => {
   return (
     <div>
       <Hero />
       <About />
-      <Features />
+      <Categories />
+      <Products />
     </div>
   )
 }

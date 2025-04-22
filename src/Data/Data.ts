@@ -3,11 +3,27 @@ import bannerOne from '../assets/velra/slider-1.jpeg'
 import bannerTwo from '../assets/velra/slider-2.jpeg'
 import bannerThree from '../assets/velra/slider-3.jpeg'
 
-// Features
+// Categories
 import livingRoom from "../assets/velra/living_room.jpg"
 import bedRoom from "../assets/velra/bed_room.jpg"
 import kidsRoom from "../assets/velra/kids_room.jpg"
 import kitchen from "../assets/velra/kitchen.jpg"
+
+// Products
+import chair1 from "../assets/velra/chair/1.jpeg"
+import chair2 from "../assets/velra/chair/2.jpeg"
+import chair3 from "../assets/velra/chair/3.jpeg"
+import chair4 from "../assets/velra/chair/4.jpeg"
+import chair5 from "../assets/velra/chair/5.jpeg"
+import chair6 from "../assets/velra/chair/6.jpeg"
+import chair7 from "../assets/velra/chair/7.jpeg"
+import chair8 from "../assets/velra/chair/8.jpeg"
+import chair9 from "../assets/velra/chair/9.jpeg"
+import chair10 from "../assets/velra/chair/10.jpeg"
+import chair11 from "../assets/velra/chair/11.jpeg"
+import chair12 from "../assets/velra/chair/12.jpeg"
+import chair13 from "../assets/velra/chair/13.jpeg"
+import chair14 from "../assets/velra/chair/14.jpeg"
 
 
 export const navLinks = [
@@ -59,7 +75,7 @@ export const banners = [
   },
 ];
 
-export const feature = [
+export const category = [
   {
     id: 1,
     img: livingRoom,
@@ -90,7 +106,7 @@ export const feature = [
 export const products = [
   {
     id: 1,
-    img: "../assets/velra/chair/1.jpeg",
+    img: chair1,
     category: "bestsell",
     brand: "Old Brand",
     title: "Natural Wood Dining Chair",
@@ -101,7 +117,7 @@ export const products = [
   },
   {
     id: 2,
-    img: "../assets/velra/chair/2.jpeg",
+    img: chair2,
     category: "New Category",
     brand: "Latest Brand",
     title: "Dining Chair",
@@ -112,7 +128,7 @@ export const products = [
   },
   {
     id: 3,
-    img: "../assets/velra/chair/3.jpeg",
+    img: chair3,
     category: "bestsell",
     brand: "Latest Brand",
     title: "Best Chair",
@@ -123,7 +139,7 @@ export const products = [
   },
   {
     id: 4,
-    img: "../assets/velra/chair/4.jpeg",
+    img: chair4,
     category: "Old Category",
     brand: "Latest Brand",
     title: "Natural Wood Chair",
@@ -134,7 +150,7 @@ export const products = [
   },
   {
     id: 5,
-    img: "../assets/velra/chair/5.jpeg",
+    img: chair5,
     category: "bestsell",
     brand: "Latest Brand",
     title: "Sitting Chair",
@@ -145,7 +161,7 @@ export const products = [
   },
   {
     id: 6,
-    img: "../assets/velra/chair/6.jpeg",
+    img: chair6,
     category: "Low Price",
     brand: "Latest Brand",
     title: "Natural Wood Dining Chair",
@@ -156,7 +172,7 @@ export const products = [
   },
   {
     id: 7,
-    img: "../assets/velra/chair/7.jpeg",
+    img: chair7,
     category: "bestsell",
     brand: "Latest Brand",
     title: "Beautiful Chair",
@@ -167,7 +183,7 @@ export const products = [
   },
   {
     id: 8,
-    img: "../assets/velra/chair/8.jpeg",
+    img: chair8,
     category: "Low Price",
     brand: "Indian",
     title: "Chair set",
@@ -178,7 +194,7 @@ export const products = [
   },
   {
     id: 9,
-    img: "../assets/velra/chair/9.jpeg",
+    img: chair9,
     category: "Best One",
     brand: "Indian",
     title: "Best One",
@@ -189,7 +205,7 @@ export const products = [
   },
   {
     id: 10,
-    img: "../assets/velra/chair/10.jpeg",
+    img: chair10,
     category: "High Price",
     brand: "Indian",
     title: "Chair",
@@ -200,7 +216,7 @@ export const products = [
   },
   {
     id: 11,
-    img: "../assets/velra/chair/11.jpeg",
+    img: chair11,
     category: "bestsell",
     brand: "Indian",
     title: "Old Chair",
@@ -211,7 +227,7 @@ export const products = [
   },
   {
     id: 12,
-    img: "../assets/velra/chair/12.jpeg",
+    img: chair12,
     category: "High Price",
     brand: "Indian",
     title: "New Chair",
@@ -222,7 +238,7 @@ export const products = [
   },
   {
     id: 13,
-    img: "../assets/velra/chair/13.jpeg",
+    img: chair13,
     category: "bestsell",
     brand: "Indian",
     title: "New Brand Chair",
@@ -233,7 +249,7 @@ export const products = [
   },
   {
     id: 14,
-    img: "../assets/velra/chair/14.jpeg",
+    img: chair14,
     category: "High Price",
     brand: "Indian",
     title: "Stylish Chair",

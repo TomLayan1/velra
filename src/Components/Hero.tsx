@@ -30,7 +30,7 @@ const Hero:React.FC = () => {
           </div>
         </div>
       </div>
-      <div className='overflow-hidden w-full h-[100vh] md:h-[630px] flex'>
+      <div className='overflow-hidden w-full h-[100vh] md:h-[710px] flex'>
         <div
           className='flex transition-transform duration-1000 ease-in-out'
           style={{ transform: `translateX(-${index * 100}%)` }}
