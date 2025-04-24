@@ -8,9 +8,10 @@ import { PiBagSimpleBold } from "react-icons/pi";
 
 type NavPropsType = {
   setSearchBar: React.Dispatch<React.SetStateAction<boolean>>;
+  setOpenCart: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Navbar: React.FC<NavPropsType> = ({ setSearchBar }) => {
+const Navbar: React.FC<NavPropsType> = ({ setSearchBar, setOpenCart }) => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
   // const [currentPage, setCurrentPage] = useState<string>("Home");
 
@@ -23,7 +24,7 @@ const Navbar: React.FC<NavPropsType> = ({ setSearchBar }) => {
       {showMenu && <div className='w-full h-[100vh] bg-[#d6d4d4c5] lg:hidden fixed top-0 left-0 z-10'></div>}
       <div className='absolute w-full top-0 left-0 z-10 text-white'>
         <div className='container p-4 md:px-8 lg:py-0 mx-auto flex justify-between items-center'>
-          <h1 className='text-4xl'>Velra</h1>
+          <h1 className='text-4xl font-bold font-[Crimson]'>Velra</h1>
           <div className={`bg-white z- fixed lg:static top-0 right-0 w-[50%] lg:w-auto h-[100vh] lg:h-16 pt-20 lg:pt-0 duration-300 lg:translate-x-0 ease-in-out ${showMenu ? 'translate-x-0' : 'translate-x-full'} text-black flex lg:items-center px-7 lg:rounded-bl-3xl lg:rounded-br-3xl`}>
             <nav className='flex flex-col lg:flex-row gap-5 lg:gap-7'>
               {navLinks?.map(link => (
@@ -31,9 +32,9 @@ const Navbar: React.FC<NavPropsType> = ({ setSearchBar }) => {
               ))}
             </nav>
           </div>
-          <div className='flex items-center gap-4'>
+          <div className='flex items-center gap-7'>
             <FaSearch onClick={() => setSearchBar(true)} className='cursor-pointer' size={20} />
-            <PiBagSimpleBold className='cursor-pointer' size={20} />
+            <PiBagSimpleBold onClick={() => setOpenCart(true)} className='cursor-pointer' size={20} />
             <IoPerson className='cursor-pointer' size={20} />
             <div onClick={() => setShowMenu(!showMenu)} className='flex items-center cursor-pointer lg:hidden'>
               {!showMenu ? <FaBars size={20} /> : <FaTimes className='text-black z-50' size={20} />}

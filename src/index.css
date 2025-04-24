@@ -2,6 +2,9 @@
 
 
 @layer utilities {
+  body::-webkit-scrollbar {
+    display: none;
+  }
   .custom_shadow {
     box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2);
   }
@@ -17,5 +20,8 @@
     100% {
       transform: translateX(-100%);
     }
+  }
+  .scroll::-webkit-scrollbar{
+    display: none;
   }
 }

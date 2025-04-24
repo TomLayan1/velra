@@ -9,14 +9,17 @@ import Footer from '../Components/Footer'
 import Contact from '../Components/Contact'
 import ProductDetailModal from '../Components/ProductDetailModal'
 import { ProductsType } from '../Interface/interface'
+import Cart from '../Components/Cart'
 
 const Home:React.FC = () => {
   const [productDetail, setProductDetail] = useState<boolean>(false);
-  const [selectedProduct, setSelectedProduct] = useState<ProductsType | null>(null)
-  console.log(selectedProduct)
+  const [selectedProduct, setSelectedProduct] = useState<ProductsType | null>(null);
+  const [openCart, setOpenCart] = useState<boolean>(false);
+
   return (
     <div className='bg-white'>
-      <Hero />
+      <Hero setOpenCart={setOpenCart} />
+      <Cart openCart={openCart} setOpenCart={setOpenCart} />
       <About />
       <Categories />
       <Products setProductDetail={setProductDetail} setSelectedProduct={setSelectedProduct} />

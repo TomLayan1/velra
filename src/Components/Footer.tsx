@@ -36,11 +36,11 @@ const Footer:React.FC = () => {
   ]
 
   return (
-    <footer className='container mx-auto pt-16 pb-5 md::py-16'>
+    <footer className='container mx-auto pt-16 pb-5 md:py-16'>
       <div className='w-[90%] mx-auto'>
         <div className='md:flex items-baseline justify-between mb-16 lg:mb-20'>
           <div className='md:w-[40%] mb-6 lg:mb-0'>
-            <h1 className='text-4xl mb-3.5'>Velra</h1>
+            <h1 className='text-4xl font-bold font-[Crimson] mb-3.5'>Velra</h1>
             <p className='text-[15px] text-gray-400'>At Velra, we believe that every home deserves beauty, comfort, and timeless style — because your space should inspire the way you live.</p>
           </div>
           <div className='flex flex-col flex-wrap md:flex-row gap-4 md:gap-7 w-[35%]'>

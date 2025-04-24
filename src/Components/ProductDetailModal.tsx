@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaTimes } from "react-icons/fa";
 import { IoIosStar } from "react-icons/io";
 import { IoIosStarHalf } from "react-icons/io";
@@ -14,6 +14,22 @@ type ProductDetailModalProps = {
 }
 
 const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ productDetail, setProductDetail, selectedProduct }) => {
+  const [quantity, setQuantity] = useState<number>(1);
+
+  const increaseQuantity = () => {
+    if (quantity < 10) {
+      setQuantity(prev => prev + 1);
+    }
+  }
+
+  const reduceQuantity = () => {
+    if (quantity > 1) {
+      setQuantity(prev => prev - 1);
+    }
+    else{
+      setQuantity(1);
+    }
+  }
 
   return (
     <>
@@ -39,9 +55,9 @@ const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ productDetail, 
               <p className='text-[15px] mb-3'>{selectedProduct?.short_description}</p>
               <h3 className='text-2xl mb-3.5'>${selectedProduct?.price}</h3>
               <div className='w-[126px] border-2 border-black flex items-center justify-between mb-3.5'>
-                <FaMinus size={38} className='p-3 border-r-2 border-black cursor-pointer' />
-                <p className=''>10</p>
-                <FaPlus size={38} className='p-3 border-l-2 border-black cursor-pointer' />
+                <FaMinus onClick={reduceQuantity} size={38} className='p-3 border-r-2 border-black cursor-pointer' />
+                <p className='text-center'>{quantity}</p>
+                <FaPlus onClick={increaseQuantity} size={38} className='p-3 border-l-2 border-black cursor-pointer' />
               </div>
               <button className='bg-black py-3 px-6 text-white text-[15px] cursor-pointer rounded-full'>Add To Cart</button>
             </div>
