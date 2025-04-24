@@ -12,12 +12,11 @@ type NavPropsType = {
 
 const Navbar: React.FC<NavPropsType> = ({ setSearchBar }) => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
-  const [currentPage, setCurrentPage] = useState<string>("Home");
-  console.log(currentPage);
+  // const [currentPage, setCurrentPage] = useState<string>("Home");
 
-  const handleNavlinks = (link: string) => {
-    link && setCurrentPage(link)
-  }
+  // const handleNavlinks = (link: string) => {
+  //   link && setCurrentPage(link)
+  // }
   
   return (
     <>
@@ -28,7 +27,7 @@ const Navbar: React.FC<NavPropsType> = ({ setSearchBar }) => {
           <div className={`bg-white z- fixed lg:static top-0 right-0 w-[50%] lg:w-auto h-[100vh] lg:h-16 pt-20 lg:pt-0 duration-300 lg:translate-x-0 ease-in-out ${showMenu ? 'translate-x-0' : 'translate-x-full'} text-black flex lg:items-center px-7 lg:rounded-bl-3xl lg:rounded-br-3xl`}>
             <nav className='flex flex-col lg:flex-row gap-5 lg:gap-7'>
               {navLinks?.map(link => (
-                <li onClick={() => { setShowMenu(false), handleNavlinks(link.nav) }} className='list-none cursor-pointer' key={link.id}>{link.nav}</li>          
+                <li onClick={() => { setShowMenu(false) }} className='list-none cursor-pointer' key={link.id}>{link.nav}</li>          
               ))}
             </nav>
           </div>

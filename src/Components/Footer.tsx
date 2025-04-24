@@ -36,7 +36,7 @@ const Footer:React.FC = () => {
   ]
 
   return (
-    <section className='container mx-auto pt-16 pb-5 md::py-16'>
+    <footer className='container mx-auto pt-16 pb-5 md::py-16'>
       <div className='w-[90%] mx-auto'>
         <div className='md:flex items-baseline justify-between mb-16 lg:mb-20'>
           <div className='md:w-[40%] mb-6 lg:mb-0'>
@@ -79,7 +79,7 @@ const Footer:React.FC = () => {
           </div>
         </div>
       </div>
-    </section>
+    </footer>
   )
 }
 

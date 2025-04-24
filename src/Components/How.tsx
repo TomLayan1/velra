@@ -3,7 +3,7 @@ import grouped from '../assets/grouped.png'
 
 const How:React.FC = () => {
   return (
-    <section className = 'pt-10 lg:pt-20 pb-20'>
+    <section className = 'pt-10 lg:pt-10 pb-20'>
       <div className='container mx-auto'>
         <div className='w-[90%] mx-auto flex justify-evenly items-center gap-6'>
           <div className='md:w-[50%] lg:w-[40%]'>
