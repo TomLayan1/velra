@@ -5,7 +5,9 @@ import { IoIosStarHalf } from "react-icons/io";
 import { FaPlus } from "react-icons/fa6";
 import { FaMinus } from "react-icons/fa6";
 import { ProductsType } from '../Interface/interface';
-
+import { addToCart } from '../Redux/cart/cartActions';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../Redux/Store';
 
 type ProductDetailModalProps = {
   productDetail: boolean;
@@ -15,6 +17,10 @@ type ProductDetailModalProps = {
 
 const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ productDetail, setProductDetail, selectedProduct }) => {
   const [quantity, setQuantity] = useState<number>(1);
+
+  const cart = useSelector((state:RootState) => state.addToCartReducer.cart);
+  const dispatch = useDispatch();
+  console.log('Shopping cart', cart)
 
   const increaseQuantity = () => {
     if (quantity < 10) {
@@ -59,7 +65,7 @@ const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ productDetail, 
                 <p className='text-center'>{quantity}</p>
                 <FaPlus onClick={increaseQuantity} size={38} className='p-3 border-l-2 border-black cursor-pointer' />
               </div>
-              <button className='bg-black py-3 px-6 text-white text-[15px] cursor-pointer rounded-full'>Add To Cart</button>
+              <button onClick={() => selectedProduct && dispatch(addToCart(selectedProduct))} className='bg-black py-3 px-6 text-white text-[15px] cursor-pointer rounded-full'>Add To Cart</button>
             </div>
           </div>
         </div>

@@ -1,7 +1,12 @@
 import { ADD_TO_CART } from "../actionTypes";
+import { ProductsType } from "../../Interface/interface";
 
-const addToCart = () => {
+export const addToCart = (product: ProductsType | undefined) => {
   return {
-    type: ADD_TO_CART
+    type: ADD_TO_CART,
+    payload: product
   }
 }
+
+// Define action type
+export type AddToCartActionType = ReturnType<typeof addToCart>;
