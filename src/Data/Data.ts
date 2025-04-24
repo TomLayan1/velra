@@ -26,6 +26,11 @@ import chair13 from "../assets/velra/chair/13.jpeg"
 import chair14 from "../assets/velra/chair/14.jpeg"
 
 
+// Users
+import user1 from '../assets/velra/users/user-1.jpg'
+import user2 from '../assets/velra/users/user-2.jpg'
+import user3 from '../assets/velra/users/user-3.jpg'
+
 export const navLinks = [
   {
     id: 1,
@@ -298,4 +303,129 @@ export const brands = [
     title: "The Purest",
     short_description: "Grab a deal Airspun Products",
   },
+];
+
+export const testimonials = [
+  {
+    id: 1,
+    user_img: user1,
+    name: "James Walker",
+    comment: "I love that Velra uses sustainable materials. It feels good knowing my home looks great and supports the planet too.",
+  },
+  {
+    id: 2,
+    user_img: user2,
+    name: "Emily Carter",
+    comment: "Velra’s furniture completely transformed my living room. The quality is outstanding and the design is timeless.",
+  },
+
+  {
+    id: 3,
+    user_img: user3,
+    name: "Michael Harris",
+    comment: "Fast delivery, great customer service, and the furniture? Even better than the photos. I'm so impressed!",
+  }
+];
+
+export const testimonialsTwo = [
+  {
+    id: 1,
+    name: "Emily Carter",
+    comment: "Velra’s furniture completely transformed my space. The craftsmanship is unmatched.",
+  },
+  {
+    id: 2,
+    name: "James Walker",
+    comment: "I’m impressed with the design and how eco-conscious the materials are.",
+  },
+  {
+    id: 3,
+    name: "Michael Harris",
+    comment: "Solid build, fast delivery, and excellent support. I’ll definitely shop again.",
+  },
+  {
+    id: 4,
+    name: "Ashley Thompson",
+    comment: "Beautiful furniture that feels just as good as it looks. Velra is now my go-to.",
+  },
+  {
+    id: 5,
+    name: "Daniel Brooks",
+    comment: "Everything was seamless—from order to delivery. And the quality? Top-notch.",
+  },
+  {
+    id: 6,
+    name: "Ryan Scott",
+    comment: "I’ve never owned furniture this sturdy and stylish before. Worth every dollar.",
+  },
+  {
+    id: 7,
+    name: "Sarah Mitchell",
+    comment: "It’s refreshing to buy from a brand that actually cares about sustainability.",
+  },
+  {
+    id: 8,
+    name: "Ethan Davis",
+    comment: "Velra makes furniture shopping easy and exciting. Their pieces are stunning.",
+  },
+  {
+    id: 9,
+    name: "Benjamin Reed",
+    comment: "The attention to detail is insane. My dining set is now the highlight of my home.",
+  },
+  {
+    id: 10,
+    name: "Olivia Moore",
+    comment: "Furniture that’s both functional and fashionable. I’m obsessed!",
+  },
+  {
+    id: 11,
+    name: "Andrew Bennett",
+    comment: "Customer service was fantastic, and the furniture exceeded expectations.",
+  },
+  {
+    id: 12,
+    name: "Joshua King",
+    comment: "Well-made and sustainably sourced. Velra does it right.",
+  },
+  {
+    id: 13,
+    name: "Jessica Hall",
+    comment: "Love everything I ordered. It fits perfectly and feels premium.",
+  },
+  {
+    id: 14,
+    name: "William Adams",
+    comment: "I’ve been recommending Velra to everyone. Stylish and sustainable? Yes please.",
+  },
+  {
+    id: 15,
+    name: "Brandon Clark",
+    comment: "The finish and durability are unmatched. You can tell it’s built to last.",
+  },
+  {
+    id: 16,
+    name: "Lauren White",
+    comment: "My home feels brand new. Velra brings elegance to everyday living.",
+  },
+  {
+    id: 17,
+    name: "Christopher Allen",
+    comment: "Great experience from start to finish. This is how online shopping should be.",
+  },
+  {
+    id: 18,
+    name: "Nathan Turner",
+    comment: "Stylish, affordable, and sustainably made—Velra checks all the boxes.",
+  },
+  {
+    id: 19,
+    name: "Emma Wright",
+    comment: "I’m so happy with my new furniture. It looks even better in person.",
+  },
+  {
+    id: 20,
+    name: "Logan Martin",
+    comment: "It’s rare to find furniture that combines design, comfort, and conscience so well.",
+  }
 ];

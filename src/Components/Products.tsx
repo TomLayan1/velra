@@ -8,9 +8,6 @@ import { ProductsType } from '../Interface/interface';
 const Products:React.FC = () => {
   const velraProducts: ProductsType[] = products;
 
-  // const [likedItems, setLikedItems] = useState<boolean>(false);
-
-
 
   return (
     <section className='container mx-auto pt-10 pb-20'>
@@ -21,12 +18,7 @@ const Products:React.FC = () => {
             <div className='cursor-pointer overflow-hidden rounded-3xl custom_shadow pb-4'>
               <div className='relative mb-4'>
                 <img src={product.img} />
-                {/* {
-                  likedItems ? 
-                  <FaHeart size={35} className='bg-[#b84921bf] p-2 text-white rounded-full absolute top-3 right-3 cursor-pointer' />
-                  : */}
-                  <FaRegHeart size={35} className='bg-[#b84921bf] p-2 text-white rounded-full absolute top-3 right-3 cursor-pointer' />
-                {/* } */}
+                <FaRegHeart size={35} className='bg-[#b84921bf] p-2 text-white rounded-full absolute top-3 right-3 cursor-pointer' />
               </div>
               <div className='px-2'>
                 <div className='flex items-baseline justify-between mb-4 text-sm lg:text-base'>

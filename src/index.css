@@ -5,4 +5,17 @@
   .custom_shadow {
     box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2);
   }
+  .scrolling_testimonial_wrapper {
+    animation: scrollText 20s linear infinite;
+  }
+
+  @keyframes scrollText {
+    0% {
+      transform: translateX(0%);
+    }
+
+    100% {
+      transform: translateX(-100%);
+    }
+  }
 }

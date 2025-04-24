@@ -4,15 +4,17 @@ import About from '../Components/About'
 import Categories from '../Components/Categories'
 import Products from '../Components/Products'
 import How from '../Components/How'
+import Testimonial from '../Components/Testimonial'
 
 const Home:React.FC = () => {
   return (
-    <div>
+    <div className='bg-white'>
       <Hero />
       <About />
       <Categories />
       <Products />
       <How />
+      <Testimonial />
     </div>
   )
 }
