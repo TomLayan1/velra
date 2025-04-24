@@ -6,7 +6,7 @@
     box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2);
   }
   .scrolling_testimonial_wrapper {
-    animation: scrollText 20s linear infinite;
+    animation: scrollText 35s linear infinite;
   }
 
   @keyframes scrollText {

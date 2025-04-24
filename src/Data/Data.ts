@@ -31,6 +31,7 @@ import user1 from '../assets/velra/users/user-1.jpg'
 import user2 from '../assets/velra/users/user-2.jpg'
 import user3 from '../assets/velra/users/user-3.jpg'
 
+
 export const navLinks = [
   {
     id: 1,
