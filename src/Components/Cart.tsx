@@ -21,7 +21,6 @@ const Cart:React.FC<CartType> = ({ openCart, setOpenCart }) => {
 
   const cart = useSelector((state: RootState) => state.cart.cart);
   const dispatch = useDispatch<AppDispatch>();
-  console.log('Shopping cart2', cart)
   
   const addQuantity = () => {
     if (quantity < 10) {
@@ -37,6 +36,10 @@ const Cart:React.FC<CartType> = ({ openCart, setOpenCart }) => {
       setQuantity(1);
     }
   }
+
+  const subTotal: number = cart.reduce((total, item) => total + (Number(item.price) * item.quantity), 0);
+  const shippingFee: number = subTotal / 10;
+  const totalPrice: number = subTotal + shippingFee;
 
   return (
     <>
@@ -87,15 +90,15 @@ const Cart:React.FC<CartType> = ({ openCart, setOpenCart }) => {
           <div className='md:w-[330px] border p-4 mt-10'>
             <div className='flex items-center justify-between mb-2'>
               <p className='font-bold'>Subtotal</p>
-              <p className='font-bold'>$100.00</p>
+              <p className='font-bold'>${subTotal ? subTotal.toLocaleString() : '00.00'}</p>
             </div>
             <div className='flex items-center justify-between mb-2'>
               <p className='font-bold'>Shipping cost</p>
-              <p className='font-bold'>$10.00</p>
+              <p className='font-bold'>${shippingFee ? shippingFee.toLocaleString() : '00.00'}</p>
             </div>
             <div className='flex items-center justify-between mb-4'>
               <p className='font-bold text-[#b84921]'>Total</p>
-              <p className='font-bold text-[#b84921]'>$100.00</p>
+              <p className='font-bold text-[#b84921]'>${totalPrice ? totalPrice.toLocaleString() : '00.00'}</p>
             </div>
             <button className='w-full bg-black text-white py-2 cursor-pointer'>CHECKOUT</button>
           </div>

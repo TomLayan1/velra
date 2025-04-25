@@ -47,7 +47,7 @@ const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ productDetail, 
         <div className='bg-white w-[90%] md:w-[550px] p-4'>
           <div className='w-full flex items-center justify-between mb-5'>
             <p className='text-[#b84921] font-bold'>Product Details</p>
-            <FaTimes onClick={() => setProductDetail(false)} className='cursor-pointer' />
+            <FaTimes onClick={() => {setQuantity(1); setProductDetail(false)}} className='cursor-pointer' />
           </div>
           <div className='flex flex-col md:flex-row gap-3.5 md:gap-7'>
             <div className=''>
@@ -69,7 +69,7 @@ const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ productDetail, 
                 <p className='text-center'>{quantity}</p>
                 <FaPlus onClick={() => {addQuantity(); dispatch(increaseQuantity(selectedProduct?.id as number))}} size={38} className='p-3 border-l-2 border-black cursor-pointer' />
               </div>
-              <button onClick={() => selectedProduct && dispatch(addToCart({...selectedProduct, quantity}))} className='bg-black py-3 px-6 text-white text-[15px] cursor-pointer rounded-full'>Add To Cart</button>
+              <button onClick={() => {setQuantity(1); selectedProduct && dispatch(addToCart({...selectedProduct, quantity}))}} className='bg-black py-3 px-6 text-white text-[15px] cursor-pointer rounded-full'>Add To Cart</button>
             </div>
           </div>
         </div>
