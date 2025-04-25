@@ -73,7 +73,7 @@ const Cart:React.FC<CartType> = ({ openCart, setOpenCart }) => {
                     <div className='flex gap-6 md:gap-28'>
                       <div>
                         <p className='text-[13px]'>Subtotal</p>
-                        <p className='text-[15px] font-bold'>${Number(item.price) * item.quantity}</p>
+                        <p className='text-[15px] font-bold'>${(Number(item.price) * item.quantity).toLocaleString()}</p>
                       </div>
                       <FaTrashCan className='cursor-pointer mt-6' />
                     </div>
