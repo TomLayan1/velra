@@ -28,7 +28,7 @@ const Hero: React.FC<HeroProps> = ({ setOpenCart  }) => {
       <div className='absolute w-[90%] container mx-auto top-16 left-0 right-0 flex justify-end z-1 overflow-hidden'>
         <div>
           <div className={`w-full md:w-[300px] border border-white bg-[#535353af] flex items-center px-2 gap-2 duration-150 ease-in-out ${searchBar ? 'translate-x-0' : 'translate-x-full'}`}>
-            <input className='w-full md:w-[300px] text-[15px] text-white font-medium py-2 outline-0' placeholder='Search here' />
+            <input id='search' className='w-full md:w-[300px] text-[15px] text-white font-medium py-2 outline-0' placeholder='Search here' />
             <FaTimes onClick={() => setSearchBar(false)} className='text-white cursor-pointer' />
           </div>
         </div>

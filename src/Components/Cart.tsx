@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { FaTimes } from "react-icons/fa";
 import { FaPlus } from "react-icons/fa6";
 import { FaMinus } from "react-icons/fa6";
 import { FaTrashCan } from "react-icons/fa6";
-import { useSelector } from 'react-redux';
-import { RootState } from '../Redux/Store';
+import type { RootState, AppDispatch } from "../Redux/Store";
+import { increaseQuantity, decreaseQuantity, removeFromCart } from '../Redux/cart/TestReducer';
+
 
 
 
@@ -17,10 +19,11 @@ type CartType = {
 const Cart:React.FC<CartType> = ({ openCart, setOpenCart }) => {
   const [quantity, setQuantity] = useState<number>(1);
 
-  const cart = useSelector((state: RootState) => state.addToCartReducer.cart);
+  const cart = useSelector((state: RootState) => state.cart.cart);
+  const dispatch = useDispatch<AppDispatch>();
   console.log('Shopping cart2', cart)
   
-  const increaseQuantity = () => {
+  const addQuantity = () => {
     if (quantity < 10) {
       setQuantity(prev => prev + 1);
     }
@@ -63,9 +66,9 @@ const Cart:React.FC<CartType> = ({ openCart, setOpenCart }) => {
                     <div className='pt-'>
                       <p className='text-[13px] mb-2'>Quantity</p>
                       <div className='w-[126px] border-2 border-black flex items-center justify-between mb-3.5'>
-                        <FaMinus onClick={reduceQuantity} size={38} className='p-3 border-r-2 border-black cursor-pointer' />
-                        <p className='text-center'>{quantity}</p>
-                        <FaPlus onClick={increaseQuantity} size={38} className='p-3 border-l-2 border-black cursor-pointer' />
+                        <FaMinus onClick={() => {reduceQuantity(); dispatch(decreaseQuantity(item.id as number))}} size={38} className='p-3 border-r-2 border-black cursor-pointer' />
+                        <p className='text-center'>{item.quantity}</p>
+                        <FaPlus onClick={() => {addQuantity(); dispatch(increaseQuantity(item.id as number))}} size={38} className='p-3 border-l-2 border-black cursor-pointer' />
                       </div>
                     </div>
                     <div className='flex gap-6 md:gap-28'>
@@ -73,7 +76,7 @@ const Cart:React.FC<CartType> = ({ openCart, setOpenCart }) => {
                         <p className='text-[13px]'>Subtotal</p>
                         <p className='text-[15px] font-bold'>${(Number(item.price) * item.quantity).toLocaleString()}</p>
                       </div>
-                      <FaTrashCan className='cursor-pointer mt-6' />
+                      <FaTrashCan onClick={() => dispatch(removeFromCart(item.id))} className='cursor-pointer mt-6' />
                     </div>
                   </div>
                 </div>

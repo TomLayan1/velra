@@ -18,16 +18,8 @@ export interface ProductsType {
   description: string;
 }
 
-export interface CartType {
-  id: number;
-  img: string;
-  category: string;
-  brand: string;
-  title: string;
-  short_description: string;
-  price: string;
-  quantity: number;
-  description: string;
+export type CartType = ProductsType & {
+  quantity: number
 }
 
 export interface CartStateType {
