@@ -33,7 +33,7 @@ const Products: React.FC<ProductsProps> = ({ setProductDetail, setSelectedProduc
               <div className='px-2'>
                 <div className='flex items-baseline justify-between mb-4 text-sm lg:text-base'>
                   <p className='w-[60%] uppercase font-medium leading-4 md:leading-5 overflow-hidden overflow-ellipsis text-nowrap'>{product.title}</p>
-                  <p>${product.price}</p>
+                  <p>${Number(product.price).toLocaleString()}</p>
                 </div>
                 <div className='flex text-[#b84921]'>
                   <IoIosStar />

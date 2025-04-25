@@ -59,7 +59,7 @@ const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ productDetail, 
                 <IoIosStarHalf />
               </div>
               <p className='text-[15px] mb-3'>{selectedProduct?.short_description}</p>
-              <h3 className='text-2xl mb-3.5'>${selectedProduct?.price}</h3>
+              <h3 className='text-2xl mb-3.5'>${Number(selectedProduct?.price).toLocaleString()}</h3>
               <div className='w-[126px] border-2 border-black flex items-center justify-between mb-3.5'>
                 <FaMinus onClick={reduceQuantity} size={38} className='p-3 border-r-2 border-black cursor-pointer' />
                 <p className='text-center'>{quantity}</p>

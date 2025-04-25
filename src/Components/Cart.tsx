@@ -3,8 +3,6 @@ import { FaTimes } from "react-icons/fa";
 import { FaPlus } from "react-icons/fa6";
 import { FaMinus } from "react-icons/fa6";
 import { FaTrashCan } from "react-icons/fa6";
-import { formatPrice } from '../Utility';
-import sample from '../assets/velra/chair/1.jpeg'
 import { useSelector } from 'react-redux';
 import { RootState } from '../Redux/Store';
 
@@ -54,10 +52,10 @@ const Cart:React.FC<CartType> = ({ openCart, setOpenCart }) => {
                 <div className='w-full flex flex-col md:flex-row justify-between'>
                   
                   <div className='w-full md:w-[34%] flex gap-5'>
-                    <img className='w-[120px]' src={sample} alt='name of product in the cart' />
+                    <img className='w-[120px]' src={item.img} alt='name of product in the cart' />
                     <div className='mt-[25px'>
                       <p className='text-[13px]'>Each</p>
-                      <p className='text-[15px] font-bold'>${formatPrice(item.price)}</p>
+                      <p className='text-[15px] font-bold'>${Number(item.price).toLocaleString()}</p>
                     </div>
                   </div>
 
