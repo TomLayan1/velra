@@ -69,7 +69,7 @@ const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ productDetail, 
                 <p className='text-center'>{quantity}</p>
                 <FaPlus onClick={() => {addQuantity(); dispatch(increaseQuantity(selectedProduct?.id as number))}} size={38} className='p-3 border-l-2 border-black cursor-pointer' />
               </div>
-              <button onClick={() => {setQuantity(1); selectedProduct && dispatch(addToCart({...selectedProduct, quantity}))}} className='bg-black py-3 px-6 text-white text-[15px] cursor-pointer rounded-full'>Add To Cart</button>
+              <button onClick={() => { setProductDetail(false); setQuantity(1); selectedProduct && dispatch(addToCart({...selectedProduct, quantity}))}} className='bg-black py-3 px-6 text-white text-[15px] cursor-pointer rounded-full'>Add To Cart</button>
             </div>
           </div>
         </div>

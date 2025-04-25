@@ -2,8 +2,18 @@
 
 
 @layer utilities {
+  body{
+    background-color: #ffffff;
+  }
   body::-webkit-scrollbar {
     display: none;
+  }
+  input,
+  textarea,
+  select {
+    background-color: #fff;
+    color: #000;
+    -webkit-appearance: none;
   }
   .custom_shadow {
     box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2);
