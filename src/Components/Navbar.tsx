@@ -13,11 +13,6 @@ type NavPropsType = {
 
 const Navbar: React.FC<NavPropsType> = ({ setSearchBar, setOpenCart }) => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
-  // const [currentPage, setCurrentPage] = useState<string>("Home");
-
-  // const handleNavlinks = (link: string) => {
-  //   link && setCurrentPage(link)
-  // }
   
   return (
     <>

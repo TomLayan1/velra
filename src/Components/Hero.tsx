@@ -23,7 +23,7 @@ const Hero: React.FC<HeroProps> = ({ setOpenCart  }) => {
 
 
   return (
-    <section className='container mx-auto md:pt-3 relative'>
+    <section className='container md:w-[95%] lg:w-full mx-auto md:pt-3 relative'>
       <Navbar setSearchBar={setSearchBar} setOpenCart={setOpenCart} />
       <div className='absolute w-[90%] container mx-auto top-16 left-0 right-0 flex justify-end z-1 overflow-hidden'>
         <div>

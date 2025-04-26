@@ -23,7 +23,7 @@ const Products: React.FC<ProductsProps> = ({ setProductDetail, setSelectedProduc
     <section className='container mx-auto pt-10 pb-20'>
       <div>
         <h4 className='text-center font-bold tracking-widest mb-16'>PRODUCTS</h4>
-        <div className='w-[90%] mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-10'>
+        <div className='w-[90%] mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8 lg:gap-10'>
           {velraProducts?.map(product => (
             <div key={product.id} onClick={() => {setProductDetail(true); selectProduct(product.id)}} className='cursor-pointer overflow-hidden rounded-3xl custom_shadow pb-4'>
               <div className='relative mb-4'>
