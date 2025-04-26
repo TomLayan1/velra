@@ -8,7 +8,7 @@ import { FaMinus } from "react-icons/fa6";
 import { ProductsType } from '../Interface/interface';
 // import { addToCart } from '../Redux/cart/cartActions';
 import type { RootState, AppDispatch } from "../Redux/Store";
-import { addToCart, increaseQuantity, decreaseQuantity } from '../Redux/cart/TestReducer';
+import { addToCart, increaseQuantity, decreaseQuantity } from '../Redux/cart/cartReducer';
 
 
 type ProductDetailModalProps = {

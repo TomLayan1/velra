@@ -5,7 +5,7 @@ import { FaPlus } from "react-icons/fa6";
 import { FaMinus } from "react-icons/fa6";
 import { FaTrashCan } from "react-icons/fa6";
 import type { RootState, AppDispatch } from "../Redux/Store";
-import { increaseQuantity, decreaseQuantity, removeFromCart } from '../Redux/cart/TestReducer';
+import { increaseQuantity, decreaseQuantity, removeFromCart } from '../Redux/cart/cartReducer';
 
 
 

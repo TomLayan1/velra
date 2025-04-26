@@ -23,7 +23,7 @@ const Hero: React.FC<HeroProps> = ({ setOpenCart  }) => {
 
 
   return (
-    <div className='w-full relative'>
+    <section className='container mx-auto md:pt-3 relative'>
       <Navbar setSearchBar={setSearchBar} setOpenCart={setOpenCart} />
       <div className='absolute w-[90%] container mx-auto top-16 left-0 right-0 flex justify-end z-1 overflow-hidden'>
         <div>
@@ -33,9 +33,8 @@ const Hero: React.FC<HeroProps> = ({ setOpenCart  }) => {
           </div>
         </div>
       </div>
-      <div className='overflow-hidden w-full h-[100vh] md:h-[710px] flex'>
-        <div
-          className='flex transition-transform duration-1000 ease-in-out'
+      <div className='md:rounded-2xl overflow-hidden w-full h-[100vh] md:h-[600px] flex'>
+        <div className='flex transition-transform duration-1000 ease-in-out'
           style={{ transform: `translateX(-${index * 100}%)` }}
         >
           {heroBanners?.map(hero => (
@@ -44,7 +43,7 @@ const Hero: React.FC<HeroProps> = ({ setOpenCart  }) => {
               className='w-full h-full flex-shrink-0 text-white relative overflow-hidden'
             >
               <img className='w-full h-full  object-cover' src={hero.banner} alt={hero.text} />
-              <div className='absolute top-0 left-0 right-0 pt-56 md:pt-80 pb-40'>
+              <div className='absolute left-0 right-0 bottom-10'>
                 <div className='px-6 md:px-10 lg:px-16'>
                   <h1 className='md:max-w-[600px] lg:max-w-[900px] text-2xl md:text-4xl lg:text-6xl font-extrabold font-[Crimson] mb-3 tracking-wid lg:leading-18'>{hero.text}</h1>
                   <div className='md:flex items-center justify-between'>
@@ -57,7 +56,7 @@ const Hero: React.FC<HeroProps> = ({ setOpenCart  }) => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 
