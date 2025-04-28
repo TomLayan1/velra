@@ -5,8 +5,6 @@ import { IoIosStar } from "react-icons/io";
 import { IoIosStarHalf } from "react-icons/io";
 import { FaPlus } from "react-icons/fa6";
 import { FaMinus } from "react-icons/fa6";
-import { ProductsType } from '../Interface/interface';
-// import { addToCart } from '../Redux/cart/cartActions';
 import type { RootState, AppDispatch } from "../Redux/Store";
 import { addToCart, increaseQuantity, decreaseQuantity } from '../Redux/cart/cartReducer';
 
@@ -14,17 +12,16 @@ import { addToCart, increaseQuantity, decreaseQuantity } from '../Redux/cart/car
 type ProductDetailModalProps = {
   productDetail: boolean;
   setProductDetail: React.Dispatch<React.SetStateAction<boolean>>;
-  selectedProduct: ProductsType | null;
 }
 
-const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ productDetail, setProductDetail, selectedProduct }) => {
+const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ productDetail, setProductDetail }) => {
   const [quantity, setQuantity] = useState<number>(1);
 
-  const cart = useSelector((state:RootState) => state.cart.cart);
+  const selectedProduct = useSelector((state: RootState) => state.product.selectedProduct);
   const dispatch = useDispatch<AppDispatch>();
 
   // const dispatch = useDispatch();
-  console.log('Shopping cart', cart)
+  console.log('Shopping cart', selectedProduct)
 
   const addQuantity = () => {
     if (quantity < 10) {

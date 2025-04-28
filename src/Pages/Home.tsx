@@ -8,12 +8,11 @@ import Testimonial from '../Components/Testimonial'
 import Footer from '../Components/Footer'
 import Contact from '../Components/Contact'
 import ProductDetailModal from '../Components/ProductDetailModal'
-import { ProductsType } from '../Interface/interface'
 import Cart from '../Components/Cart'
 
 const Home:React.FC = () => {
   const [productDetail, setProductDetail] = useState<boolean>(false);
-  const [selectedProduct, setSelectedProduct] = useState<ProductsType | null>(null);
+  // const [selectedProduct, setSelectedProduct] = useState<ProductsType | null>(null);
   const [openCart, setOpenCart] = useState<boolean>(false);
 
   return (
@@ -22,8 +21,8 @@ const Home:React.FC = () => {
       <Cart openCart={openCart} setOpenCart={setOpenCart} />
       <About />
       <Categories />
-      <Products setProductDetail={setProductDetail} setSelectedProduct={setSelectedProduct} />
-      <ProductDetailModal productDetail={productDetail} setProductDetail={setProductDetail} selectedProduct={selectedProduct} />
+      <Products setProductDetail={setProductDetail} />
+      <ProductDetailModal productDetail={productDetail} setProductDetail={setProductDetail} />
       <How />
       <Testimonial />
       <Contact />

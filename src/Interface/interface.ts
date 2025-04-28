@@ -17,7 +17,9 @@ export interface ProductsType {
   price: string;
   description: string;
 }
-
+export interface SelectedProductType {
+  selectedProduct: ProductsType | null;
+}
 export type CartType = ProductsType & {
   quantity: number
 }
