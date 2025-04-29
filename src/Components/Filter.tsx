@@ -1,21 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Slider } from "@radix-ui/themes";
 import { categoryFilter, brands } from '../Data/Data';
 import { CategoryFilterType, BrandType } from '../Interface/interface';
 
-const Filter:React.FC = () => {
-  const [selectedCategory, setSelectedCategory] = useState<string[]>([]);
-  const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
+type FilterPropType = {
+  selectedCategory: string[];
+  selectedBrands: string[];
+  handleCategoryFilter: (name: string) => void;
+  handleBrandFilter: (name: string) => void;
+}
+
+const Filter: React.FC<FilterPropType> = ({ selectedCategory, selectedBrands, handleCategoryFilter, handleBrandFilter }) => {
   console.log(selectedBrands);
 
-  const handleCategoryFilter = (name: string) => {
-    setSelectedCategory(prev => prev.includes(name) ? prev.filter(categoryName => categoryName !== name) : [...prev, name]);
-  }
-
-  const handleBrandFilter = (name: string) => {
-    setSelectedBrands(prev => prev.includes(name) ? prev.filter(brandName => brandName !== name) : [...prev, name]
-    );
-  };
 
   const velraCategory: CategoryFilterType[] = categoryFilter
   const velraBrand: BrandType[] = brands;

@@ -36,8 +36,13 @@
   .scroll::-webkit-scrollbar{
     display: none;
   }
-    .radix-slider {
-      height: 30px;
-      /* adjust to your preference */
-    }
+  .filtered_scroll::-webkit-scrollbar{
+    width: 7px;
+  }
+  .filtered_scroll::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  .filtered_scroll::-webkit-scrollbar-thumb {
+    background-color: #c1380d;
+  }
 }
