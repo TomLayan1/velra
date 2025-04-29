@@ -3,30 +3,22 @@ import { products } from '../Data/Data'
 import { FaRegHeart } from "react-icons/fa";
 import { IoIosStar } from "react-icons/io";
 import { IoIosStarHalf } from "react-icons/io";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { selectProduct } from '../Redux/Products/productReducer';
 import { AppDispatch } from '../Redux/Store';
 import { ProductsType } from '../Interface/interface';
+import { selectedFilteredProducts } from '../Utils/selector';
 
 
 type FilteredProductsPropType = {
   setProductDetail: React.Dispatch<React.SetStateAction<boolean>>;
-  filteredProducts: {
-    id: number;
-    img: string;
-    category: string;
-    brand: string;
-    title: string;
-    short_description: string;
-    price: string;
-    description: string;
-  }[];
 }
 
-const FilteredProducts: React.FC<FilteredProductsPropType> = ({ setProductDetail, filteredProducts }) => {
+const FilteredProducts: React.FC<FilteredProductsPropType> = ({ setProductDetail }) => {
     const velraProducts: ProductsType[] = products;
   
     const dispatch = useDispatch<AppDispatch>();
+    const filteredProducts = useSelector(selectedFilteredProducts);
   
     const handleSelectProduct = (id: number) => {
       const isSelected = velraProducts?.find(item => (item.id === id));

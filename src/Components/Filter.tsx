@@ -2,20 +2,20 @@ import React from 'react';
 import { Slider } from "@radix-ui/themes";
 import { categoryFilter, brands } from '../Data/Data';
 import { CategoryFilterType, BrandType } from '../Interface/interface';
-
-type FilterPropType = {
-  selectedCategory: string[];
-  selectedBrands: string[];
-  handleCategoryFilter: (name: string) => void;
-  handleBrandFilter: (name: string) => void;
-}
-
-const Filter: React.FC<FilterPropType> = ({ selectedCategory, selectedBrands, handleCategoryFilter, handleBrandFilter }) => {
-  console.log(selectedBrands);
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch } from '../Redux/Store';
+import { RootState } from '../Redux/Store';
+import { handleCategoryFilter, handleBrandsFilter } from '../Redux/Products/productReducer';
 
 
+const Filter: React.FC = () => {
   const velraCategory: CategoryFilterType[] = categoryFilter
   const velraBrand: BrandType[] = brands;
+
+  const dispatch = useDispatch<AppDispatch>();
+  const selectedCategory = useSelector((state: RootState) => state.product.selectedCategory);
+  const selectedBrands = useSelector((state: RootState) => state.product.selectedBrands);
+
   return (
     <div className='w-[23%] bg-gray-300 p-3'>
       <h1 className='text-3xl text-[#c1380d] font-bold mb-6'>Filter</h1>
@@ -33,7 +33,7 @@ const Filter: React.FC<FilterPropType> = ({ selectedCategory, selectedBrands, ha
                 className='border w-3.5 h-3.5'
                 type='checkbox'
                 checked={selectedCategory.includes(category.name)}
-                onChange={() => handleCategoryFilter(category.name)}
+                onChange={() => dispatch(handleCategoryFilter(category.name))}
               />
               <p>{category.name}</p>
             </div>
@@ -50,7 +50,7 @@ const Filter: React.FC<FilterPropType> = ({ selectedCategory, selectedBrands, ha
                   className='border w-3.5 h-3.5'
                   type='checkbox'
                   checked={selectedBrands.includes(brand.name)}
-                  onChange={() => handleBrandFilter(brand.name)}
+                  onChange={() => dispatch(handleBrandsFilter(brand.name))}
                 />
                 <p>{brand.name}</p>
               </div>

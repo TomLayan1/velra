@@ -20,6 +20,19 @@ export interface ProductsType {
 export interface SelectedProductType {
   selectedProduct: ProductsType | null;
 }
+export interface CategoryFilterType {
+  id: number,
+  name: string
+}
+export interface BrandType {
+  id: number;
+  name: string;
+}
+export interface ProductsReducerStateType {
+  selectedProduct: ProductsType | null;
+  selectedCategory: string[];
+  selectedBrands: string[];
+}
 export type CartType = ProductsType & {
   quantity: number
 }
@@ -31,12 +44,4 @@ export interface CartStateType {
 export interface AddToCartActionType {
   type: typeof ADD_TO_CART;
   payload: CartType
-}
-export interface CategoryFilterType {
-  id: number,
-  name: string
-}
-export interface BrandType {
-  id: number;
-  name: string;
 }
