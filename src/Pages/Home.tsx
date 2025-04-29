@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Hero from '../Components/Hero'
 import About from '../Components/About'
 import Categories from '../Components/Categories'
@@ -7,7 +7,6 @@ import How from '../Components/How'
 import Testimonial from '../Components/Testimonial'
 import Footer from '../Components/Footer'
 import Contact from '../Components/Contact'
-import Cart from '../Components/Cart'
 
 type HomePropsType = {
   searchBar: boolean;
