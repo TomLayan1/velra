@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import Navbar from '../Components/Navbar'
 import Cart from '../Components/Cart';
 import shopBanner from '../assets/velra/shop-banner.jpg';
@@ -20,6 +20,16 @@ const Shop: React.FC<ShopPropsType> = ({ openCart, setSearchBar, setOpenCart, se
 
   const velraProducts = products;
 
+  const filteredProducts = useMemo(() => {
+    return velraProducts?.filter(product => {
+      const matchedCategory = selectedCategory.length ===0 || selectedCategory.includes(product.category);
+      const matchedBrand = selectedBrands.length === 0 || selectedBrands.includes(product.brand);
+      return matchedCategory && matchedBrand; 
+    })
+  }, [velraProducts, selectedCategory, selectedBrands]);
+
+  console.log("filteredProducts:", filteredProducts)
+
   const handleCategoryFilter = (name: string) => {
     setSelectedCategory(prev => prev.includes(name) ? prev.filter(categoryName => categoryName !== name) : [...prev, name]);
   }
@@ -39,14 +49,14 @@ const Shop: React.FC<ShopPropsType> = ({ openCart, setSearchBar, setOpenCart, se
           </div>
         </div>
         <Cart openCart={openCart} setOpenCart={setOpenCart} />
-        <div className='w-full h-[600px] overflow-y-hidden pt-9 flex gap-10'>
+        <div className='w-full h-[650px] overflow-y-hidden pt-9 flex gap-10'>
           <Filter 
             selectedCategory={selectedCategory} 
             selectedBrands={selectedBrands} 
             handleCategoryFilter={handleCategoryFilter}
             handleBrandFilter={handleBrandFilter}
           />
-          <FilteredProducts setProductDetail={setProductDetail} />
+          <FilteredProducts setProductDetail={setProductDetail} filteredProducts={filteredProducts} />
         </div>
       </div>
       <Footer />

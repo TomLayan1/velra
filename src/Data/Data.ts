@@ -297,15 +297,15 @@ export const categoryFilter = [
 export const brands = [
   {
     id: 1,
-    name: "Old brand",
+    name: "Old Brand",
   },
   {
     id: 2,
-    name: "Latest brand",
+    name: "Latest Brand",
   },
   {
     id: 3,
-    name: "ImaIndianc",
+    name: "Indian",
   }
 ];
 

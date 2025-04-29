@@ -10,10 +10,20 @@ import { ProductsType } from '../Interface/interface';
 
 
 type FilteredProductsPropType = {
-  setProductDetail: React.Dispatch<React.SetStateAction<boolean>>
+  setProductDetail: React.Dispatch<React.SetStateAction<boolean>>;
+  filteredProducts: {
+    id: number;
+    img: string;
+    category: string;
+    brand: string;
+    title: string;
+    short_description: string;
+    price: string;
+    description: string;
+  }[];
 }
 
-const FilteredProducts:React.FC<FilteredProductsPropType> = ({ setProductDetail}) => {
+const FilteredProducts: React.FC<FilteredProductsPropType> = ({ setProductDetail, filteredProducts }) => {
     const velraProducts: ProductsType[] = products;
   
     const dispatch = useDispatch<AppDispatch>();
@@ -27,7 +37,7 @@ const FilteredProducts:React.FC<FilteredProductsPropType> = ({ setProductDetail}
   return (
     <div className='w-[84%] h-full p-3 pb-5 overflow-y-scroll filtered_scroll'>
       <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8 lg:gap-10'>
-        {velraProducts?.map(product => (
+        {filteredProducts?.map(product => (
           <div key={product.id} onClick={() => {setProductDetail(true); handleSelectProduct(product.id)}} className='cursor-pointer overflow-hidden rounded-3xl custom_shadow pb-4'>
             <div className='relative mb-4'>
               <img src={product.img} />
