@@ -32,3 +32,11 @@ export interface AddToCartActionType {
   type: typeof ADD_TO_CART;
   payload: CartType
 }
+export interface CategoryFilterType {
+  id: number,
+  name: string
+}
+export interface BrandType {
+  id: number;
+  name: string;
+}

@@ -109,11 +109,12 @@ export const category = [
   },
 ];
 
+
 export const products = [
   {
     id: 1,
     img: chair1,
-    category: "bestsell",
+    category: "Bestsell",
     brand: "Old Brand",
     title: "Natural Wood Dining Chair",
     short_description: "A timeless dining chair crafted from solid natural wood.",
@@ -135,7 +136,7 @@ export const products = [
   {
     id: 3,
     img: chair3,
-    category: "bestsell",
+    category: "Bestsell",
     brand: "Latest Brand",
     title: "Best Chair",
     short_description: "Our customer-favorite chair for ultimate comfort and style.",
@@ -157,7 +158,7 @@ export const products = [
   {
     id: 5,
     img: chair5,
-    category: "bestsell",
+    category: "Bestsell",
     brand: "Latest Brand",
     title: "Sitting Chair",
     short_description: "Comfort meets function in this cozy sitting chair.",
@@ -179,7 +180,7 @@ export const products = [
   {
     id: 7,
     img: chair7,
-    category: "bestsell",
+    category: "Bestsell",
     brand: "Latest Brand",
     title: "Beautiful Chair",
     short_description: "A visually striking chair for statement spaces.",
@@ -223,7 +224,7 @@ export const products = [
   {
     id: 11,
     img: chair11,
-    category: "bestsell",
+    category: "Bestsell",
     brand: "Indian",
     title: "Old Chair",
     short_description: "Vintage-inspired chair with timeless charm.",
@@ -245,7 +246,7 @@ export const products = [
   {
     id: 13,
     img: chair13,
-    category: "bestsell",
+    category: "Bestsell",
     brand: "Indian",
     title: "New Brand Chair",
     short_description: "A fresh take on contemporary seating.",
@@ -266,44 +267,46 @@ export const products = [
   },
 ];
 
+export const categoryFilter = [
+  {
+    id: 1,
+    name: "Bestsell"
+  },
+  {
+    id: 2,
+    name: "New Category"
+  },
+  {
+    id: 3,
+    name: "Old Category"
+  },
+  {
+    id: 4,
+    name: "Low Price"
+  },
+  {
+    id: 6,
+    name: "High Price"
+  },
+  {
+    id: 5,
+    name: "Best One"
+  }
+]
 
 export const brands = [
   {
     id: 1,
-    img: "../assets/velra/chair/1.jpeg",
-    title: "Coty",
-    short_description: "Grab a deal Airspun Products",
+    name: "Old brand",
   },
   {
     id: 2,
-    img: "../assets/velra/chair/2.jpg",
-    title: "Laten",
-    short_description: "Grab a deal Airspun Products",
+    name: "Latest brand",
   },
   {
     id: 3,
-    img: "../assets/velra/chair/3.png",
-    title: "Imagic",
-    short_description: "Grab a deal Airspun Products",
-  },
-  {
-    id: 4,
-    img: "../assets/velra/chair/4.png",
-    title: "Pee Safe",
-    short_description: "Grab a deal Airspun Products",
-  },
-  {
-    id: 5,
-    img: "../assets/velra/chair/5.jpg",
-    title: "Maybeleine",
-    short_description: "Grab a deal Airspun Products",
-  },
-  {
-    id: 6,
-    img: "../assets/velra/chair/6.png",
-    title: "The Purest",
-    short_description: "Grab a deal Airspun Products",
-  },
+    name: "ImaIndianc",
+  }
 ];
 
 export const testimonials = [

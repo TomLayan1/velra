@@ -43,7 +43,7 @@ const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ productDetail, 
       {productDetail && <div className='w-full h-[100vh] bg-[#d6d4d457] fixed top-0 left-0 z-10 flex items-center justify-center'>
         <div className='bg-white w-[90%] md:w-[550px] p-4'>
           <div className='w-full flex items-center justify-between mb-5'>
-            <p className='text-[#b84921] font-bold'>Product Details</p>
+            <p className='text-xl text-[#c1380d] font-bold'>Product Details</p>
             <FaTimes onClick={() => {setQuantity(1); setProductDetail(false)}} className='cursor-pointer' />
           </div>
           <div className='flex flex-col md:flex-row gap-3.5 md:gap-7'>
@@ -52,7 +52,7 @@ const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ productDetail, 
             </div>
             <div className=''>
               <p className='text-base font-bold uppercase mb-2'>{selectedProduct?.title}</p>
-              <div className='flex text-[#b84921] mb-2'>
+              <div className='flex text-[#c1380d] mb-2'>
                 <IoIosStar />
                 <IoIosStar />
                 <IoIosStar />
@@ -62,11 +62,11 @@ const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ productDetail, 
               <p className='text-[15px] mb-3'>{selectedProduct?.short_description}</p>
               <h3 className='text-2xl mb-3.5'>${Number(selectedProduct?.price).toLocaleString()}</h3>
               <div className='w-[126px] border-2 border-black flex items-center justify-between mb-3.5'>
-                <FaMinus onClick={() => {reduceQuantity(); dispatch(decreaseQuantity(selectedProduct?.id as number))}} size={38} className='p-3 border-r-2 border-black cursor-pointer' />
+                <FaMinus onClick={() => {reduceQuantity(); dispatch(decreaseQuantity(selectedProduct?.id as number))}} size={38} className='p-3 border-r-2 border-black hover:bg-black hover:text-white duration-300 cursor-pointer' />
                 <p className='text-center'>{quantity}</p>
-                <FaPlus onClick={() => {addQuantity(); dispatch(increaseQuantity(selectedProduct?.id as number))}} size={38} className='p-3 border-l-2 border-black cursor-pointer' />
+                <FaPlus onClick={() => { addQuantity(); dispatch(increaseQuantity(selectedProduct?.id as number)) }} size={38} className='p-3 border-l-2 border-black hover:bg-black hover:text-white duration-300 cursor-pointer' />
               </div>
-              <button onClick={() => { setProductDetail(false); setQuantity(1); selectedProduct && dispatch(addToCart({...selectedProduct, quantity}))}} className='bg-black py-3 px-6 text-white text-[15px] cursor-pointer rounded-full'>Add To Cart</button>
+              <button onClick={() => { setProductDetail(false); setQuantity(1); selectedProduct && dispatch(addToCart({ ...selectedProduct, quantity })) }} className='bg-black hover:bg-[#c1380d] duration-300 py-3 px-6 text-white text-[15px] cursor-pointer rounded-full'>Add To Cart</button>
             </div>
           </div>
         </div>

@@ -5,11 +5,12 @@ import { banners } from '../Data/Data';
 import { BannerType } from '../Interface/interface';
 
 type HeroProps = {
+    searchBar: boolean;
+    setSearchBar: React.Dispatch<React.SetStateAction<boolean>>;
   setOpenCart: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Hero: React.FC<HeroProps> = ({ setOpenCart  }) => {
-  const [searchBar, setSearchBar] = useState<boolean>(false);
+const Hero: React.FC<HeroProps> = ({ searchBar, setSearchBar, setOpenCart  }) => {
   const heroBanners: BannerType[] = banners;
   const [index, setIndex] = useState<number>(0);
 
@@ -42,13 +43,13 @@ const Hero: React.FC<HeroProps> = ({ setOpenCart  }) => {
               key={hero.id}
               className='w-full h-full flex-shrink-0 text-white relative overflow-hidden'
             >
-              <img className='w-full h-full  object-cover' src={hero.banner} alt={hero.text} />
+              <img className='w-full h-full object-cover' src={hero.banner} alt={hero.text} />
               <div className='absolute left-0 right-0 bottom-10'>
                 <div className='px-6 md:px-10 lg:px-16'>
                   <h1 className='md:max-w-[600px] lg:max-w-[900px] text-2xl md:text-4xl lg:text-6xl font-extrabold font-[Crimson] mb-3 tracking-wid lg:leading-18'>{hero.text}</h1>
                   <div className='md:flex items-center justify-between'>
                     <p className='max-w-[500px] text-[17px] mb-3'>{hero.sub_text}</p>
-                    <button className='bg-white text-black text-[14px] font-medium font-[Crimson] px-5 py-3 rounded-full cursor-pointer'>Shop Now</button>
+                    <button className='bg-white hover:bg-[#c1380d] duration-300 text-black hover:text-white text-[14px] font-medium font-[Crimson] px-5 py-3 rounded-full cursor-pointer'>Shop Now</button>
                   </div>
                 </div>
               </div>

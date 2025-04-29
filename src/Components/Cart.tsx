@@ -47,7 +47,7 @@ const Cart:React.FC<CartType> = ({ openCart, setOpenCart }) => {
       <div className={`w-full lg:w-[50%] h-[100vh] fixed top-0 right-0 z-40 bg-white overflow-y-scroll scroll duration-300 ease-in-out ${ openCart ? 'translate-x-0' : 'translate-x-full'} `}>
         <div className='p-6'>
           <div className='w-full flex items-center justify-between mb-10 py-2 border-b border-gray-400'>
-            <h1 className='text-3xl text-[#b84921] font-bold'>Your Cart</h1>
+            <h1 className='text-3xl text-[#c1380d] font-bold'>Your Cart</h1>
             <FaTimes onClick={() => setOpenCart(false)} className='cursor-pointer' />
           </div>
 
@@ -69,9 +69,9 @@ const Cart:React.FC<CartType> = ({ openCart, setOpenCart }) => {
                     <div className='pt-'>
                       <p className='text-[13px] mb-2'>Quantity</p>
                       <div className='w-[126px] border-2 border-black flex items-center justify-between mb-3.5'>
-                        <FaMinus onClick={() => {reduceQuantity(); dispatch(decreaseQuantity(item.id as number))}} size={38} className='p-3 border-r-2 border-black cursor-pointer' />
+                        <FaMinus onClick={() => { reduceQuantity(); dispatch(decreaseQuantity(item.id as number)) }} size={38} className='p-3 border-r-2 border-black hover:bg-black hover:text-white duration-300 cursor-pointer' />
                         <p className='text-center'>{item.quantity}</p>
-                        <FaPlus onClick={() => {addQuantity(); dispatch(increaseQuantity(item.id as number))}} size={38} className='p-3 border-l-2 border-black cursor-pointer' />
+                        <FaPlus onClick={() => { addQuantity(); dispatch(increaseQuantity(item.id as number)) }} size={38} className='p-3 border-l-2 border-black hover:bg-black hover:text-white duration-300 cursor-pointer' />
                       </div>
                     </div>
                     <div className='flex gap-6 md:gap-28'>
@@ -79,7 +79,7 @@ const Cart:React.FC<CartType> = ({ openCart, setOpenCart }) => {
                         <p className='text-[13px]'>Subtotal</p>
                         <p className='text-[15px] font-bold'>${(Number(item.price) * item.quantity).toLocaleString()}</p>
                       </div>
-                      <FaTrashCan onClick={() => dispatch(removeFromCart(item.id))} className='cursor-pointer mt-6' />
+                      <FaTrashCan onClick={() => dispatch(removeFromCart(item.id))} className='cursor-pointer hover:text-[#c1380d] duration-300 mt-6' />
                     </div>
                   </div>
                 </div>
@@ -97,10 +97,10 @@ const Cart:React.FC<CartType> = ({ openCart, setOpenCart }) => {
               <p className='font-bold'>${shippingFee ? shippingFee.toLocaleString() : '00.00'}</p>
             </div>
             <div className='flex items-center justify-between mb-4'>
-              <p className='font-bold text-[#b84921]'>Total</p>
-              <p className='font-bold text-[#b84921]'>${totalPrice ? totalPrice.toLocaleString() : '00.00'}</p>
+              <p className='font-bold text-[#c1380d]'>Total</p>
+              <p className='font-bold text-[#c1380d]'>${totalPrice ? totalPrice.toLocaleString() : '00.00'}</p>
             </div>
-            <button className='w-full bg-black text-white py-2 cursor-pointer'>CHECKOUT</button>
+            <button className='w-full bg-black hover:bg-[#c1380d] duration-300 text-white py-2 cursor-pointer'>CHECKOUT</button>
           </div>
         </div>
       </div>

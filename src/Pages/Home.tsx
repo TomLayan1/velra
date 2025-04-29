@@ -10,14 +10,19 @@ import Contact from '../Components/Contact'
 import ProductDetailModal from '../Components/ProductDetailModal'
 import Cart from '../Components/Cart'
 
-const Home:React.FC = () => {
+type HomePropsType = {
+  searchBar: boolean;
+  setSearchBar: React.Dispatch<React.SetStateAction<boolean>>;
+  openCart: boolean;
+  setOpenCart: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Home: React.FC<HomePropsType> = ({ searchBar, setSearchBar, openCart , setOpenCart}) => {
   const [productDetail, setProductDetail] = useState<boolean>(false);
-  // const [selectedProduct, setSelectedProduct] = useState<ProductsType | null>(null);
-  const [openCart, setOpenCart] = useState<boolean>(false);
 
   return (
     <div className='bg-white'>
-      <Hero setOpenCart={setOpenCart} />
+      <Hero searchBar={searchBar} setSearchBar={setSearchBar} setOpenCart={setOpenCart} />
       <Cart openCart={openCart} setOpenCart={setOpenCart} />
       <About />
       <Categories />

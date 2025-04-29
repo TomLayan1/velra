@@ -32,14 +32,14 @@ const Products: React.FC<ProductsProps> = ({ setProductDetail }) => {
             <div key={product.id} onClick={() => {setProductDetail(true); handleSelectProduct(product.id)}} className='cursor-pointer overflow-hidden rounded-3xl custom_shadow pb-4'>
               <div className='relative mb-4'>
                 <img src={product.img} />
-                <FaRegHeart size={35} className='bg-[#b84921bf] p-2 text-white rounded-full absolute top-3 right-3 cursor-pointer' />
+                <FaRegHeart size={35} className='bg-[#c1380d] p-2 text-white rounded-full absolute top-3 right-3 cursor-pointer' />
               </div>
               <div className='px-2'>
                 <div className='flex items-baseline justify-between mb-4 text-sm lg:text-base'>
                   <p className='w-[60%] uppercase font-medium leading-4 md:leading-5 overflow-hidden overflow-ellipsis text-nowrap'>{product.title}</p>
                   <p>${Number(product.price).toLocaleString()}</p>
                 </div>
-                <div className='flex text-[#b84921]'>
+                <div className='flex text-[#c1380d]'>
                   <IoIosStar />
                   <IoIosStar />
                   <IoIosStar />

@@ -4,7 +4,7 @@ import { testimonialsTwo } from '../Data/Data'
 const Testimonial:React.FC = () => {
   return (
     <section className='bg-black px-4 py-12 overflow-x-hidden'>
-      <h2 className='text-2xl md:text-3xl text-[#b84921] text-center font-bold mb-10 md:mb-16'>Don't just take our word for it</h2>
+      <h2 className='text-2xl md:text-3xl text-[#c1380d] text-center font-bold mb-10 md:mb-16'>Don't just take our word for it</h2>
       <div className='scrolling_testimonial_wrapper flex gap-7'>
         {testimonialsTwo?.map(item => (
           <div key={item.id} className='bg-white p-5 rounded-2xl'>

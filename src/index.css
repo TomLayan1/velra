@@ -1,5 +1,5 @@
+@import "@radix-ui/themes/styles.css";
 @import "tailwindcss";
-
 
 @layer utilities {
   body{
@@ -36,4 +36,8 @@
   .scroll::-webkit-scrollbar{
     display: none;
   }
+    .radix-slider {
+      height: 30px;
+      /* adjust to your preference */
+    }
 }
