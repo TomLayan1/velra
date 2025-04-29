@@ -27,7 +27,7 @@ const FilteredProducts: React.FC<FilteredProductsPropType> = ({ setProductDetail
     }
     
   return (
-    <div className='w-[84%] h-full p-3 pb-5 overflow-y-scroll filtered_scroll'>
+    <div className='lg:w-[84%] h-full p-3 pb-5 overflow-y-scroll filtered_scroll'>
       <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8 lg:gap-10'>
         {filteredProducts?.map(product => (
           <div key={product.id} onClick={() => {setProductDetail(true); handleSelectProduct(product.id)}} className='cursor-pointer overflow-hidden rounded-3xl custom_shadow pb-4'>

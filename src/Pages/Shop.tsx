@@ -16,15 +16,15 @@ const Shop: React.FC<ShopPropsType> = ({ openCart, setSearchBar, setOpenCart, se
 
   return (
     <>
-      <div className='container md:w-[95%] lg:w-[90%] mx-auto md:pt-'>
+      <div className='container w-[95%] lg:w-[90%] mx-auto md:pt-3'>
         <div>
-          <div className='w-full h-[360px] relative overflow-hidden rounded-bl-4xl rounded-br-4xl'>
-            <img className=' object-cover' src={shopBanner} alt='Shop banner' />
+          <div className='w-full h-[160px] lg:h-[360px] relative overflow-hidden rounded-4xl'>
+            <img className='w-full h-full' src={shopBanner} alt='Shop banner' />
             <Navbar setSearchBar={setSearchBar} setOpenCart={setOpenCart} />
           </div>
         </div>
         <Cart openCart={openCart} setOpenCart={setOpenCart} />
-        <div className='w-full h-[650px] overflow-y-hidden pt-9 flex gap-10'>
+        <div className='w-full lg:h-[680px] overflow-y-hidden pt-9 lg:flex gap-10'>
           <Filter />
           <FilteredProducts setProductDetail={setProductDetail} />
         </div>

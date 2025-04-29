@@ -24,8 +24,7 @@ const Hero: React.FC<HeroProps> = ({ searchBar, setSearchBar, setOpenCart  }) =>
 
 
   return (
-    <section className='container md:w-[95%] lg:w-full mx-auto md:pt-3 relative'>
-      <Navbar setSearchBar={setSearchBar} setOpenCart={setOpenCart} />
+    <section className='container md:w-[95%] lg:w-full mx-auto md:pt-3'>
       <div className='absolute w-[90%] container mx-auto top-16 left-0 right-0 flex justify-end z-1 overflow-hidden'>
         <div>
           <div className={`w-full md:w-[300px] border border-white bg-[#535353af] flex items-center px-2 gap-2 duration-150 ease-in-out ${searchBar ? 'translate-x-0' : 'translate-x-full'}`}>
@@ -34,7 +33,8 @@ const Hero: React.FC<HeroProps> = ({ searchBar, setSearchBar, setOpenCart  }) =>
           </div>
         </div>
       </div>
-      <div className='md:rounded-2xl overflow-hidden w-full h-[100vh] md:h-[600px] flex'>
+      <div className='md:rounded-2xl overflow-hidden w-full h-[100vh] md:h-[600px] flex relative'>
+        <Navbar setSearchBar={setSearchBar} setOpenCart={setOpenCart} />
         <div className='flex transition-transform duration-1000 ease-in-out'
           style={{ transform: `translateX(-${index * 100}%)` }}
         >
