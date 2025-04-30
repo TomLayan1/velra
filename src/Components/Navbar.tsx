@@ -24,7 +24,7 @@ const Navbar: React.FC<NavPropsType> = ({ setSearchBar, setOpenCart }) => {
           <div className={`fixed bg-white lg:bg-transparent lg:static top-0 right-0 w-[50%] lg:w-auto h-[100vh] lg:h-16 pt-20 lg:pt-0 duration-300 lg:translate-x-0 ease-in-out ${showMenu ? 'translate-x-0' : 'translate-x-full'} flex lg:items-center px-7 lg:rounded-bl-3xl lg:rounded-br-3xl`}>
             <nav className='flex flex-col lg:flex-row gap-5 lg:gap-7'>
               {navLinks?.map(link => (
-                <Link to={link.path} onClick={() => { setShowMenu(false) }} className='text-[#c1380d]  cursor-pointer' key={link.id}>{link.nav}</Link>          
+                <Link to={link.path} onClick={() => { setShowMenu(false) }} className='text-[#c1380d] lg:text-white cursor-pointer' key={link.id}>{link.nav}</Link>          
               ))}
             </nav>
           </div>

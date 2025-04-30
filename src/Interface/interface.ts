@@ -45,3 +45,10 @@ export interface AddToCartActionType {
   type: typeof ADD_TO_CART;
   payload: CartType
 }
+export interface OrdersType {
+  id: number;
+  img: string;
+  name: string;
+  quantity: number;
+  price: string;
+}

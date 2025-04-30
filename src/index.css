@@ -45,4 +45,10 @@
   .filtered_scroll::-webkit-scrollbar-thumb {
     background-color: #c1380d;
   }
+
+  @media (max-width: 320px) {
+    .order_img {
+      display: hidden;
+    }
+  }
 }

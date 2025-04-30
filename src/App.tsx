@@ -6,6 +6,7 @@ import Home from "./Pages/Home";
 import Shop from "./Pages/Shop";
 import ProductDetailModal from "./Components/ProductDetailModal";
 import Cart from "./Components/Cart";
+import Orders from "./Pages/Orders";
 
 function App() {
   const [searchBar, setSearchBar] = useState<boolean>(false);
@@ -28,6 +29,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home searchBar={searchBar} setSearchBar={setSearchBar} setOpenCart={setOpenCart} setProductDetail={setProductDetail} />} />
           <Route path="/shop" element={<Shop setSearchBar={setSearchBar} openCart={openCart} setOpenCart={setOpenCart} setProductDetail={setProductDetail} />} />
+          <Route path="/orders" element={<Orders />} />
         </Routes>
       </BrowserRouter>
     </Provider>

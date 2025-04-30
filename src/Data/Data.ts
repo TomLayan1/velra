@@ -45,16 +45,21 @@ export const navLinks = [
   },
   {
     id: 3,
+    path: "/orders",
+    nav: "Orders"
+  },
+  {
+    id: 4,
     path: "/blog",
     nav: "Blog",
   },
   {
-    id: 4,
+    id: 5,
     path: "/about",
     nav: "About Us",
   },
   {
-    id: 5,
+    id: 6,
     path: "/contact",
     nav: "Contact Us",
   },
@@ -433,3 +438,48 @@ export const testimonialsTwo = [
     comment: "It’s rare to find furniture that combines design, comfort, and conscience so well.",
   }
 ];
+
+export const orders = [
+  {
+    id: 1,
+    img: chair1,
+    name: "Natural Wood Dining Chair",
+    quantity: 3,
+    price: "129.00"
+  },
+  {
+    id: 2,
+    img: chair2,
+    name: "Dining Chair",
+    quantity: 1,
+    price: "1209.00"
+  },
+  {
+    id: 3,
+    img: chair3,
+    name: "Natural Wood Dining Chair",
+    quantity: 3,
+    price: "129.00"
+  },
+  {
+    id: 4,
+    img: chair4,
+    name: "Dining Chair",
+    quantity: 1,
+    price: "1209.00"
+  },
+  {
+    id: 5,
+    img: chair5,
+    name: "Natural Wood Dining Chair",
+    quantity: 3,
+    price: "129.00"
+  },
+  {
+    id: 6,
+    img: chair6,
+    name: "Dining Chair",
+    quantity: 1,
+    price: "1209.00"
+  }
+]
