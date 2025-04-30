@@ -10,7 +10,7 @@ import { handleCategoryFilter, handleBrandsFilter } from '../Redux/Products/prod
 
 
 const Filter: React.FC = () => {
-  const [openFilter, setOpenFilter] = useState<boolean>(true)
+  const [openFilter, setOpenFilter] = useState<boolean>(false)
   const velraCategory: CategoryFilterType[] = categoryFilter
   const velraBrand: BrandType[] = brands;
 
