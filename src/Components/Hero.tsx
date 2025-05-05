@@ -6,6 +6,7 @@ import { BannerType } from '../Interface/interface';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../Redux/Store';
 import { searchProducts } from '../Redux/Products/productReducer';
+import { useNavigate } from 'react-router-dom';
 
 type HeroProps = {
   searchBar: boolean;
@@ -28,12 +29,16 @@ const Hero: React.FC<HeroProps> = ({ searchBar, setSearchBar, setOpenCart  }) =>
   }, [heroBanners.length]);
 
   const dispatch = useDispatch<AppDispatch>();
+  const navigate = useNavigate();
   const searchedProducts = useSelector((state: RootState) => state.product.searchedProducts);
   console.log("SERACH:", searchedProducts);
 
-  useEffect(() => {
-    dispatch(searchProducts(searchInput));
-  }, [dispatch, searchInput])
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      dispatch(searchProducts(searchInput));
+      navigate(`/shop?query=${encodeURIComponent(searchInput)}`);
+    }
+  }
 
 
   return (
@@ -45,6 +50,7 @@ const Hero: React.FC<HeroProps> = ({ searchBar, setSearchBar, setOpenCart  }) =>
               id='search'
               value={searchInput}
               onChange={(e) => setSearchInput(e.target.value)}
+              onKeyDown={handleKeyDown}
               className='w-full md:w-[300px] text-[15px] text- font-medium py-2 outline-0'
               placeholder='Search here'
             />

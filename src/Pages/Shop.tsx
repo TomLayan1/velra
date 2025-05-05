@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { useSearchParams } from 'react-router-dom';
 import Navbar from '../Components/Navbar'
 import Cart from '../Components/Cart';
 import shopBanner from '../assets/velra/shop-banner.jpg';
@@ -8,7 +9,7 @@ import Footer from '../Components/Footer';
 import { products } from '../Data/Data';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../Redux/Store';
-import { setAllProducts } from '../Redux/Products/productReducer';
+import { searchProducts, setAllProducts } from '../Redux/Products/productReducer';
 
 type ShopPropsType = {
   setSearchBar: React.Dispatch<React.SetStateAction<boolean>>;
@@ -17,12 +18,19 @@ type ShopPropsType = {
   setProductDetail: React.Dispatch<React.SetStateAction<boolean>>
 }
 const Shop: React.FC<ShopPropsType> = ({ openCart, setSearchBar, setOpenCart, setProductDetail }) => {
-
+  const [searchParams] = useSearchParams();
+  const query = searchParams.get('query')
   const dispatch = useDispatch<AppDispatch>();
+  console.log('Query:',query)
 
   useEffect(() => {
-    dispatch(setAllProducts(products)) // <-- this is key
-  }, [dispatch])
+    dispatch(setAllProducts(products));
+
+    const query = searchParams.get('query');
+    if (query) {
+      dispatch(searchProducts(query));
+    }
+  }, [dispatch, searchParams]);
 
   return (
     <>
