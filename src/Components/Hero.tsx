@@ -3,10 +3,11 @@ import { FaTimes } from "react-icons/fa";
 import Navbar from './Navbar';
 import { banners } from '../Data/Data';
 import { BannerType } from '../Interface/interface';
-import { useDispatch, useSelector } from 'react-redux';
-import { AppDispatch, RootState } from '../Redux/Store';
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from '../Redux/Store';
 import { searchProducts } from '../Redux/Products/productReducer';
 import { useNavigate } from 'react-router-dom';
+import Search from './Search';
 
 type HeroProps = {
   searchBar: boolean;
@@ -28,36 +29,10 @@ const Hero: React.FC<HeroProps> = ({ searchBar, setSearchBar, setOpenCart  }) =>
     return () => clearInterval(interval);
   }, [heroBanners.length]);
 
-  const dispatch = useDispatch<AppDispatch>();
-  const navigate = useNavigate();
-  const searchedProducts = useSelector((state: RootState) => state.product.searchedProducts);
-  console.log("SERACH:", searchedProducts);
-
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter') {
-      dispatch(searchProducts(searchInput));
-      navigate(`/shop?query=${encodeURIComponent(searchInput)}`);
-    }
-  }
-
 
   return (
     <section className='container md:w-[95%] lg:w-full mx-auto md:pt-3'>
-      <div className='absolute w-[90%] container mx-auto top-16 left-0 right-0 flex justify-end z-1 overflow-hidden'>
-        <div>
-          <div className={`w-full md:w-[300px] border border-white bg-[#535353af] flex items-center px-2 gap-2 duration-150 ease-in-out ${searchBar ? 'translate-x-0' : 'translate-x-full'}`}>
-            <input
-              id='search'
-              value={searchInput}
-              onChange={(e) => setSearchInput(e.target.value)}
-              onKeyDown={handleKeyDown}
-              className='w-full md:w-[300px] text-[15px] text- font-medium py-2 outline-0'
-              placeholder='Search here'
-            />
-            <FaTimes onClick={() => setSearchBar(false)} className='text-white cursor-pointer' />
-          </div>
-        </div>
-      </div>
+      <Search searchBar={searchBar} setSearchBar={setSearchBar} />
       <div className='md:rounded-2xl overflow-hidden w-full h-[100vh] md:h-[600px] flex relative'>
         <Navbar setSearchBar={setSearchBar} setOpenCart={setOpenCart} />
         <div className='flex transition-transform duration-1000 ease-in-out'

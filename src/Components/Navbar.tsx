@@ -24,16 +24,16 @@ const Navbar: React.FC<NavPropsType> = ({ setSearchBar, setOpenCart }) => {
           <div className={`fixed bg-white lg:bg-transparent lg:static top-0 right-0 w-[50%] lg:w-auto h-[100vh] lg:h-16 pt-20 lg:pt-0 duration-300 lg:translate-x-0 ease-in-out ${showMenu ? 'translate-x-0' : 'translate-x-full'} flex lg:items-center px-7 lg:rounded-bl-3xl lg:rounded-br-3xl`}>
             <nav className='flex flex-col lg:flex-row gap-5 lg:gap-7'>
               {navLinks?.map(link => (
-                <Link to={link.path} onClick={() => { setShowMenu(false) }} className='text-[#c1380d] lg:text-white cursor-pointer' key={link.id}>{link.nav}</Link>          
+                <Link to={link.path} onClick={() => { setShowMenu(false); setSearchBar(false) }} className='text-[#c1380d] lg:text-white cursor-pointer' key={link.id}>{link.nav}</Link>          
               ))}
             </nav>
           </div>
           <div className='flex items-center gap-4 sm:gap-7'>
             <FaSearch onClick={() => setSearchBar(true)} className='cursor-pointer' size={20} />
-            <PiBagSimpleBold onClick={() => setOpenCart(true)} className='cursor-pointer' size={20} />
+            <PiBagSimpleBold onClick={() => { setOpenCart(true); setSearchBar(false) }} className='cursor-pointer' size={20} />
             <IoPerson className='cursor-pointer' size={20} />
             {/* <button className='bg-white hover:bg-[#c1380d] duration-300 py-2 px-5 rounded-full text-black hover:text-white text-[14px] font-[Crimson] cursor-pointer'>Sign Up</button> */}
-            <div onClick={() => setShowMenu(!showMenu)} className='flex items-center cursor-pointer lg:hidden'>
+            <div onClick={() => {setShowMenu(!showMenu); setSearchBar(false)}} className='flex items-center cursor-pointer lg:hidden'>
               {!showMenu ? <FaBars size={20} /> : <FaTimes className='text-black z-50' size={20} />}
             </div>
           </div>

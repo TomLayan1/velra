@@ -10,18 +10,18 @@ import { products } from '../Data/Data';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../Redux/Store';
 import { searchProducts, setAllProducts } from '../Redux/Products/productReducer';
+import Search from '../Components/Search';
 
 type ShopPropsType = {
+  searchBar: boolean;
   setSearchBar: React.Dispatch<React.SetStateAction<boolean>>;
   openCart: boolean;
   setOpenCart: React.Dispatch<React.SetStateAction<boolean>>;
   setProductDetail: React.Dispatch<React.SetStateAction<boolean>>
 }
-const Shop: React.FC<ShopPropsType> = ({ openCart, setSearchBar, setOpenCart, setProductDetail }) => {
+const Shop: React.FC<ShopPropsType> = ({ openCart, searchBar, setSearchBar, setOpenCart, setProductDetail }) => {
   const [searchParams] = useSearchParams();
-  const query = searchParams.get('query')
   const dispatch = useDispatch<AppDispatch>();
-  console.log('Query:',query)
 
   useEffect(() => {
     dispatch(setAllProducts(products));
@@ -39,6 +39,7 @@ const Shop: React.FC<ShopPropsType> = ({ openCart, setSearchBar, setOpenCart, se
           <div className='w-full h-[160px] lg:h-[360px] relative overflow-hidden rounded-4xl'>
             <img className='w-full h-full' src={shopBanner} alt='Shop banner' />
             <Navbar setSearchBar={setSearchBar} setOpenCart={setOpenCart} />
+            <Search searchBar={searchBar} setSearchBar={setSearchBar} />
           </div>
         </div>
         <Cart openCart={openCart} setOpenCart={setOpenCart} />
