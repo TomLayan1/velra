@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Navbar from '../Components/Navbar'
 import Cart from '../Components/Cart';
 import shopBanner from '../assets/velra/shop-banner.jpg';
 import Filter from '../Components/Filter';
 import FilteredProducts from '../Components/FilteredProducts';
 import Footer from '../Components/Footer';
+import { products } from '../Data/Data';
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from '../Redux/Store';
+import { setAllProducts } from '../Redux/Products/productReducer';
 
 type ShopPropsType = {
   setSearchBar: React.Dispatch<React.SetStateAction<boolean>>;
@@ -13,6 +17,12 @@ type ShopPropsType = {
   setProductDetail: React.Dispatch<React.SetStateAction<boolean>>
 }
 const Shop: React.FC<ShopPropsType> = ({ openCart, setSearchBar, setOpenCart, setProductDetail }) => {
+
+  const dispatch = useDispatch<AppDispatch>();
+
+  useEffect(() => {
+    dispatch(setAllProducts(products)) // <-- this is key
+  }, [dispatch])
 
   return (
     <>

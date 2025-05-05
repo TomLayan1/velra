@@ -20,9 +20,6 @@ const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ productDetail, 
   const selectedProduct = useSelector((state: RootState) => state.product.selectedProduct);
   const dispatch = useDispatch<AppDispatch>();
 
-  // const dispatch = useDispatch();
-  console.log('Shopping cart', selectedProduct)
-
   const addQuantity = () => {
     if (quantity < 10) {
       setQuantity(prev => prev + 1);

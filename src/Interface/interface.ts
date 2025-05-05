@@ -29,6 +29,8 @@ export interface BrandType {
   name: string;
 }
 export interface ProductsReducerStateType {
+  allProducts: ProductsType[] | [];
+  searchedProducts: ProductsType[] | [];  
   selectedProduct: ProductsType | null;
   selectedCategory: string[];
   selectedBrands: string[];
