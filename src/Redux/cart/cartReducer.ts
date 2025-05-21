@@ -1,5 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { CartStateType, CartType } from "../../Interface/interface";
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const initialState: CartStateType = {
@@ -18,6 +20,7 @@ const cartSlice = createSlice({
       } else {
         state.cart.push({ ...action.payload });
       }
+      toast('Item added to Cart');
     },
     increaseQuantity: (state, action: PayloadAction<number>) => {
       const item = state.cart.find((i) => i.id === action.payload);
@@ -29,6 +32,7 @@ const cartSlice = createSlice({
     },
     removeFromCart: (state, action: PayloadAction<number>) => {
       state.cart = state.cart.filter((i) => i.id !== action.payload);
+      toast.warn('Item removed from Cart')
     },
     clearCart: (state) => {
       state.cart = [];

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Provider } from "react-redux";
+import { ToastContainer } from "react-toastify";
 import store from "./Redux/Store";
 import Home from "./Pages/Home";
 import Shop from "./Pages/Shop";
@@ -25,6 +26,7 @@ function App() {
   return (
     <Provider store={store}>
       <BrowserRouter>
+        <ToastContainer />
         <ModalAndCart />
         <Routes>
           <Route path="/" element={<Home searchBar={searchBar} setSearchBar={setSearchBar} setOpenCart={setOpenCart} setProductDetail={setProductDetail} />} />
