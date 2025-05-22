@@ -19,7 +19,7 @@
     transform: scale(1.2);
   }
   .custom_shadow {
-    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 5px 5px rgba(0, 10, 10, 0.2);
   }
   .scrolling_testimonial_wrapper {
     animation: scrollText 35s linear infinite;
