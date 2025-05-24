@@ -20,15 +20,15 @@ const Login:React.FC = () => {
                 placeholder='Email' 
                 className='w-full border p-1.5 outline-0 text-[15px] bg-white mb-6'
               />
-              <div className='flex items-center gap-1.5 border pl-1.5 mb-6'>
-                <div onClick={() => setShowPassword(!showPassword)}>
-                  {showPassword ? <FaRegEye size={16} /> : <FaRegEyeSlash size={16} />}
-                </div>
+              <div className='flex items-center gap-1.5 border pr-1.5 mb-6'>
                 <input
                   type={showPassword ? 'text' : 'password'}
                   placeholder='Password'
                   className='w-full p-1.5 outline-0 text-[15px] bg-white'
                 />
+                <div onClick={() => setShowPassword(!showPassword)}>
+                  {showPassword ? <FaRegEye size={16} /> : <FaRegEyeSlash size={16} />}
+                </div>
               </div>
               <button className='w-full bg-black text-white py-1.5 cursor-pointer mb-3'>Login</button>
               <p className='text-[14px] text-center'>Don't have an account? <Link to='/sign-up' className='font-bold cursor-pointer'>Sign up</Link></p>

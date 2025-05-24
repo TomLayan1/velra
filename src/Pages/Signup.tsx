@@ -44,27 +44,27 @@ const Signup:React.FC = () => {
               </div>
               <div className='w-full flex gap-4 mb-6'>
                 <div className='mb-'>
-                  <div className='flex items-center gap-1.5 border pl-1.5'>
-                    <div onClick={() => setShowPassword(!showPassword)}>
-                      {showPassword ? <FaRegEye size={16} /> : <FaRegEyeSlash size={16} />}
-                    </div>
+                  <div className='flex items-center gap-1.5 border pr-1.5'>
                     <input
                       type={showPassword ? 'text' : 'password'}
                       placeholder='Password'
                       className='w-full p-1.5 outline-0 text-[15px] bg-white'
                     />
+                    <div onClick={() => setShowPassword(!showPassword)}>
+                      {showPassword ? <FaRegEye size={16} /> : <FaRegEyeSlash size={16} />}
+                    </div>
                   </div>
                 </div>
                 <div className='mb-'>
-                  <div className='flex items-center gap-1.5 border pl-1.5'>
-                    <div onClick={() => setShowConfirmPassword(!showConfirmPassword)}>
-                      {showConfirmPassword ? <FaRegEye size={16} /> : <FaRegEyeSlash size={16} />}
-                    </div>
+                  <div className='flex items-center gap-1.5 border pr-1.5'>
                     <input
                       type={showConfirmPassword ? 'text' : 'password'}
                       placeholder='Confirm password'
                       className='w-full p-1.5 outline-0 text-[15px] bg-white'
                     />
+                    <div onClick={() => setShowConfirmPassword(!showConfirmPassword)}>
+                      {showConfirmPassword ? <FaRegEye size={16} /> : <FaRegEyeSlash size={16} />}
+                    </div>
                   </div>
                 </div>
               </div>
