@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 
 const Login:React.FC = () => {
   return (
-    <section className='w-full h-screen flex items-center justify-center bg-[#c1370d31]'>
-      <div className='container w-[95%] lg:w-[60%] mx-auto bg-white/100 overflow-hidden flex custom_shadow'>
+    <section className='w-full h-screen flex items-center justify-center bg-[#c1370dd2]'>
+      <div className='container w-[95%] lg:w-[54%] mx-auto bg-white/100 overflow-hidden flex rounded-2xl custom_shadow'>
         <div className='w-[50%] p-5'>
           <h1 className='text-2xl md:text-3xl font-bold font-[Crimson] mb-'>Velra</h1>
           <form className='w-full h-[400px] flex items-center'>

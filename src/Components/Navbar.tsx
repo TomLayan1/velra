@@ -32,7 +32,7 @@ const Navbar: React.FC<NavPropsType> = ({ setSearchBar, setOpenCart }) => {
             <FaSearch onClick={() => setSearchBar(true)} className='cursor-pointer' size={20} />
             <PiBagSimpleBold onClick={() => { setOpenCart(true); setSearchBar(false) }} className='cursor-pointer' size={20} />
             <IoPerson className='cursor-pointer' size={20} />
-            <Link to='/login'>
+            <Link to='/sign-up'>
               <button className='bg-white hover:bg-[#c1380d] duration-300 py-2 px-5 rounded-full text-black hover:text-white text-[14px] font-[Crimson] cursor-pointer'>Sign Up</button>
             </Link>
             <div onClick={() => {setShowMenu(!showMenu); setSearchBar(false)}} className='flex items-center cursor-pointer lg:hidden'>
