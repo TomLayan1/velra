@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { FaTimes } from "react-icons/fa";
 import Navbar from './Navbar';
 import { banners } from '../Data/Data';
 import { BannerType } from '../Interface/interface';
-import { useDispatch } from 'react-redux';
-import { AppDispatch } from '../Redux/Store';
-import { searchProducts } from '../Redux/Products/productReducer';
-import { useNavigate } from 'react-router-dom';
 import Search from './Search';
 
 type HeroProps = {
@@ -16,7 +11,6 @@ type HeroProps = {
 }
 
 const Hero: React.FC<HeroProps> = ({ searchBar, setSearchBar, setOpenCart  }) => {
-  const [searchInput, setSearchInput] = useState<string>('');
   
   const heroBanners: BannerType[] = banners;
   const [index, setIndex] = useState<number>(0);

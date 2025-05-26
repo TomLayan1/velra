@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import loginChair from '../assets/velra/chair/insta-3.jpg';
 import { FaRegEye } from "react-icons/fa6";
 import { FaRegEyeSlash } from "react-icons/fa6";
-
 import { Link } from 'react-router-dom';
+
 
 const Login:React.FC = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false)
