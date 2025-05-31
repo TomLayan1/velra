@@ -6,9 +6,13 @@ import { FaRegEyeSlash } from "react-icons/fa6";
 
 const Signup:React.FC = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState<boolean>(false)
+  const [showConfirmPassword, setShowConfirmPassword] = useState<boolean>(false);
+
   return (
-    <section className='w-full h-screen flex items-center justify-center bg-[#c1370dd2]'>
+    <section className='w-full h-screen flex items-center justify-center bg-[#cca770 relative overflow-hidden'>
+      <div className='h-full absolute top-0 -left-48 -z-10 flex items-center'>
+        <h1 className='text-[900px] text-black/25 font-[Crims0n]'>V</h1>
+      </div>
       <div className='container w-[95%] lg:w-[60%] mx-auto bg-white/100 overflow-hidden flex rounded-2xl custom_shadow'>
         <div className='w-[60%] p-5'>
           <h1 className='text-2xl md:text-3xl font-bold font-[Crimson] mb-8'>Velra</h1>
@@ -29,18 +33,20 @@ const Signup:React.FC = () => {
                     className='w-full border p-1.5 outline-0 text-[15px] bg-white' />
                 </div>
               </div>
-              <div className='mb-6'>
-                <input
-                  type='email'
-                  placeholder='Email'
-                  className='w-full border p-1.5 outline-0 text-[15px] bg-white'
-                />
-              </div>
-              <div className='mb-6'>
-                <input
-                 type='text'
-                 placeholder='Address'
-                 className='w-full border p-1.5 outline-0 text-[15px] bg-white' />
+              <div className='w-full'>
+                <div className='mb-6'>
+                  <input
+                    type='email'
+                    placeholder='Email'
+                    className='w-full border p-1.5 outline-0 text-[15px] bg-white'
+                  />
+                </div>
+                <div className='mb-6'>
+                  <input
+                  type='text'
+                  placeholder='Address'
+                  className='w-full border p-1.5 outline-0 text-[15px] bg-white' />
+                </div>
               </div>
               <div className='w-full flex gap-4 mb-6'>
                 <div className='mb-'>
@@ -86,7 +92,15 @@ const Signup:React.FC = () => {
             </div>
           </form>
         </div>
-        <img className='w-[40%] ' src={signupChair} alt='Chair' />
+        <div className='w-[40%] relative'>
+          <div className='w-full h-full absolute top-0 left-0 flex items-center justify-center'>
+            <h1 className='text-5xl font-[Crimson] font-bold tracking-widest'>Welcome</h1>
+          </div>
+          <img className='w-full h-full' src={signupChair} alt='Chair' />
+        </div>
+      </div>
+      <div className='w-[400px] h-[400px] bg-black/25 absolute -bottom-40 -right-48 -z-10 rounded-full flex items-center justify-center'>
+        <div className='w-[250px] h-[250px] rounded-full bg-white'></div>
       </div>
     </section>
   )

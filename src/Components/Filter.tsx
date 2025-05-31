@@ -27,7 +27,7 @@ const Filter: React.FC = () => {
       </div>
       <div className={`bg-gray-300 w-full lg:w-auto px-3 ${!openFilter ? 'h-0' : 'h-[350px]'} lg:h-auto duration-200 overflow-hidden absolute lg:static left-0 top-20 z-10`}>
         <div className='mb-4 mt-3'>
-          <h2 className='text-xl font-bold mb-3'>By Price</h2>
+          {/* <h2 className='text-xl font-bold mb-3'>By Price</h2> */}
           <Slider defaultValue={[25, 75]} color="tomato" />
         </div>
         <div className='flex lg:flex-col gap-4'>

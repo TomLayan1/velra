@@ -7,6 +7,7 @@ import { IoPerson } from "react-icons/io5";
 import { PiBagSimpleBold } from "react-icons/pi";
 import { Link } from 'react-router-dom';
 
+
 type NavPropsType = {
   setSearchBar: React.Dispatch<React.SetStateAction<boolean>>;
   setOpenCart: React.Dispatch<React.SetStateAction<boolean>>;
