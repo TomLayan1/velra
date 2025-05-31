@@ -6,7 +6,7 @@ const Categories:React.FC = () => {
   return (
     <section className='container mx-auto pt-10 pb-20'>
       <div>
-        <h4 className='text-center font-bold tracking-widest mb-12'>CATEGORIES</h4>
+        <h4 className='md:text-[20px] text-center font-bold tracking-widest mb-12'>CATEGORIES</h4>
         <div className='w-[90%] mx-auto lg:flex lg:h-[250px]'>
           <div className='w-full lg:w-auto flex gap-4 mb-4 lg:mb-0 mr-4'>
             {category?.map((item, index) => (

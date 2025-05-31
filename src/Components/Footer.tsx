@@ -15,23 +15,23 @@ const Footer:React.FC = () => {
   const socialLink = [
     {
       id: 1,
-      icon: <FaFacebook size={30} className='bg-gray-400 p-2 text-white rounded-full cursor-pointer' />
+      icon: <FaFacebook size={30} className='bg-gray-400 hover:bg-[#c1380d] duration-200 p-2 text-white rounded-full cursor-pointer' />
     },
     {
       id: 2,
-      icon: <FaInstagram size={30} className='bg-gray-400 p-2 text-white rounded-full cursor-pointer' />
+      icon: <FaInstagram size={30} className='bg-gray-400 hover:bg-[#c1380d] duration-200 p-2 text-white rounded-full cursor-pointer' />
     },
     {
       id: 3,
-      icon: <FaPinterest size={30} className='bg-gray-400 p-2 text-white rounded-full cursor-pointer' />
+      icon: <FaPinterest size={30} className='bg-gray-400 hover:bg-[#c1380d] duration-200 p-2 text-white rounded-full cursor-pointer' />
     },
     {
       id: 4,
-      icon: <FaTiktok size={30} className='bg-gray-400 p-2 text-white rounded-full cursor-pointer' />
+      icon: <FaTiktok size={30} className='bg-gray-400 hover:bg-[#c1380d] duration-200 p-2 text-white rounded-full cursor-pointer' />
     },
     {
       id: 5,
-      icon: <FaTelegramPlane size={30} className='bg-gray-400 p-2 text-white rounded-full cursor-pointer' />
+      icon: <FaTelegramPlane size={30} className='bg-gray-400 hover:bg-[#c1380d] duration-200 p-2 text-white rounded-full cursor-pointer' />
     }
   ]
 
@@ -45,7 +45,7 @@ const Footer:React.FC = () => {
           </div>
           <div className='flex flex-col flex-wrap md:flex-row gap-4 md:gap-7 w-[35%]'>
             {navLinks?.map(link => (
-              <li key={link.id} className='list-none text-[15px] text-gray-400 cursor-pointer'>{link.nav}</li>
+              <li key={link.id} className='list-none text-[15px] hover:text-[#c1380d] duration-200 text-gray-400 cursor-pointer'>{link.nav}</li>
             ))}
           </div>
         </div>
@@ -60,7 +60,7 @@ const Footer:React.FC = () => {
               ))}
             </div>
             <div className='text-[15px] text-gray-400'>
-              <p>&copy - copyright</p>
+              <p>&copy;copyright 2025</p>
               <p>All Rights reserved</p>
             </div>
           </div>

@@ -19,20 +19,19 @@ const Products: React.FC<ProductsProps> = ({ setProductDetail }) => {
 
   const handleSelectProduct = (id: number) => {
     const isSelected = velraProducts?.find(item => (item.id === id));
-
     isSelected && dispatch(selectProduct(isSelected))
   }
 
   return (
     <section className='container mx-auto pt-10 pb-20'>
       <div>
-        <h4 className='text-center font-bold tracking-widest mb-16'>PRODUCTS</h4>
+        <h4 className='md:text-[20px] text-center font-bold tracking-widest mb-16'>PRODUCTS</h4>
         <div className='w-[90%] mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-8 lg:gap-10'>
           {velraProducts?.map(product => (
             <div key={product.id} onClick={() => {setProductDetail(true); handleSelectProduct(product.id)}} className='cursor-pointer overflow-hidden rounded-3xl custom_shadow pb-4'>
               <div className='relative mb-4'>
                 <img src={product.img} />
-                {/* <FaRegHeart size={35} className='bg-[#c1380d] p-2 text-white rounded-full absolute top-3 right-3 cursor-pointer' /> */}
+                <FaRegHeart size={35} className='bg-[#c1380d] p-2 text-white rounded-full absolute top-3 right-3 cursor-pointer' />
               </div>
               <div className='px-2'>
                 <div className='flex items-baseline justify-between mb-4 text-sm lg:text-base'>

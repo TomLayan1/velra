@@ -3,6 +3,7 @@ import signupChair from '../assets/velra/chair/insta-5.jpg';
 import { Link } from 'react-router-dom';
 import { FaRegEye } from "react-icons/fa6";
 import { FaRegEyeSlash } from "react-icons/fa6";
+import googleIcon from '../assets/google.png'
 
 const Signup:React.FC = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
@@ -15,7 +16,9 @@ const Signup:React.FC = () => {
       </div>
       <div className='container w-[95%] lg:w-[60%] mx-auto bg-white/100 overflow-hidden flex rounded-2xl custom_shadow'>
         <div className='w-[60%] p-5'>
-          <h1 className='text-2xl md:text-3xl font-bold font-[Crimson] mb-8'>Velra</h1>
+          <Link to={'/'}>
+            <h1 className='text-2xl md:text-3xl font-bold font-[Crimson] mb-8'>Velra</h1>
+          </Link>
           <form className='w-full h-[400px] flex items-center'>
             <div className='w-full'>
               <p></p>
@@ -87,8 +90,12 @@ const Signup:React.FC = () => {
                   <span className='text-[#c1380d] font-bold'> Privacy Policies</span>
                 </p>
               </div>
-              <button className='w-full bg-black text-white py-1.5 cursor-pointer mb-3'>Login</button>
-              <p className='text-[14px] text-center'>Already have an account? <Link to='/login' className='font-bold cursor-pointer'>Login</Link></p>
+              <button className='w-full bg-black hover:bg-[#c1380d] text-white py-2 duration-200 cursor-pointer mb-3'>Sign in</button>
+              <button className='w-full bg-black hover:bg-[#c1380d] text-white py-2 duration-200 flex items-center justify-center gap-2.5 cursor-pointer mb-3'>
+                <img className='w-[20px]' src={googleIcon} alt='google-icon' />
+                Sign in with google
+              </button>
+              <p className='text-[14px] text-center'>Already have an account? <Link to='/login' className='hover:text-[#c1380d] duration-200 font-bold cursor-pointer'>Login</Link></p>
             </div>
           </form>
         </div>
